@@ -1,1 +1,6 @@
-/nbproject/private/
+$ cat .gitignore	
+
+application/Config.php
+
+nbproject/
+*~	
