@@ -1,4 +1,4 @@
-﻿SinAuto
+SinAuto
 =======
 
-Sitio web exclusivo para vendedores de vehículos motorizados
+Sitio web exclusivo para vendedores de vehículos motorizados.
