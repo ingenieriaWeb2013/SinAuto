@@ -1,9 +1,0 @@
-<#if licenseFirst??>
-${licenseFirst}
-</#if>
-${licensePrefix}Proyecto : SinAuto
-${licensePrefix}Autor    : IngenieriaWeb Ltda.
-${licensePrefix}Fecha    : Jueves, 07 de agosto de 2014
-<#if licenseLast??>
-${licenseLast}
-</#if>
