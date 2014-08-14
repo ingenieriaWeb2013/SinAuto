@@ -1,9 +1,4 @@
 $ cat .gitignore	
 application/Config.php
-nbproject/project.xml
-nbproject/project.properties
-nbproject/licenseheader.txt
-nbproject/private/config.properties
-nbproject/private/private.properties
-nbproject/private/private.xml
+nbproject/
 *~	
