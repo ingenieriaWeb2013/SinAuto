@@ -291,6 +291,9 @@ class Vehiculo {
         $this->espejos = $espejos;
     }
 
+    function Vehiculo() {
+        
+    }
 
     
 }
