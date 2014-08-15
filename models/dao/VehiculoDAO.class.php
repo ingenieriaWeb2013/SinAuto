@@ -31,6 +31,7 @@ class VehiculoDAO extends Model{
             foreach ($vehiculos_array as $vehi) {
                 Vehiculo $vehi_obj = new Vehiculo();
                 $vehi_obj.setIdVehiculo($vehi['id_auto']);
+                //$vehi_obj.setUsuario($vehi['']); usar dao usuario
                 
                 
             }
