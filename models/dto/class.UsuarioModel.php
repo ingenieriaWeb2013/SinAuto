@@ -13,6 +13,7 @@
 class Usuario {
 //put your code here
     private $id_usuario;
+    private $nombre;
     private $email;
     private $facebook;
     private $twitter;
@@ -20,6 +21,16 @@ class Usuario {
     private $rut;
     private $pass;
     private $comuna;
+    
+    public function getNombre() {
+        return $this->nombre;
+    }
+
+    public function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
+
+        
     
     public function getId_usuario() {
         return $this->id_usuario;

@@ -12,10 +12,31 @@
  */
 class Region {
 
-     private $id_reg;
+     private $idReg;
      private $nombre;
      
      
+     function Region() {
+         
+     }
+     public function getIdReg() {
+         return $this->idReg;
+     }
+
+     public function getNombre() {
+         return $this->nombre;
+     }
+
+     public function setIdReg($idReg) {
+         $this->idReg = $idReg;
+     }
+
+     public function setNombre($nombre) {
+         $this->nombre = $nombre;
+     }
+
+
      
-}
+     
+} 
 ?>

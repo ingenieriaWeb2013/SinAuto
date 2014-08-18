@@ -12,16 +12,16 @@
  */
 class Comuna {
 //put your code here
-    private $id_comuna;
+    private $idComuna;
     private $region;
     private $nombre;
     
-    public function getId_comuna() {
+    public function getIdComuna() {
         return $this->id_comuna;
     }
 
-    public function setId_comuna($id_comuna) {
-        $this->id_comuna = $id_comuna;
+    public function setIdComuna($idComuna) {
+        $this->idComuna = $idComuna;
     }
 
     public function getRegion() {
