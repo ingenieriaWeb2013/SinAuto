@@ -12,7 +12,7 @@
  */
 class Consecionaria {
 //put your code here
-    private $id_con;
+    private $idCon;
     private $email;
     private $web;
     private $facebook;
@@ -23,12 +23,15 @@ class Consecionaria {
     private $foto2;
     private $foto3;
     
-    public function getId_con() {
-        return $this->id_con;
+    
+    public function Consecionaria(){}
+    
+    public function getIdCon() {
+        return $this->idCon;
     }
 
-    public function setId_con($id_con) {
-        $this->id_con = $id_con;
+    public function setIdCon($idCon) {
+        $this->idCon = $idCon;
     }
 
     public function getEmail() {

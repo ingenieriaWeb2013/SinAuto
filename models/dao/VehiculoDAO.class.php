@@ -29,10 +29,14 @@ class VehiculoDAO extends Model{
         {
             $vehiculos_array = $this->_db->fetchAll($vdb);
             foreach ($vehiculos_array as $vehi) {
-                Vehiculo $vehi_obj = new Vehiculo();
+                $vehi_obj = new Vehiculo();
                 $vehi_obj.setIdVehiculo($vehi['id_auto']);
-                //$vehi_obj.setUsuario($vehi['']); usar dao usuario
-                
+                $vehi_obj.setUsuario(UsuarioDAO::getInstance().getUsuarioPorId($vehi['id_user']));
+                $vehi_obj.setConsecionaria(ConsecionariaDAO::getInstance().getConsecionariaPorId($vehi['id_con']));
+                $vehi_obj.setFechaPublica($vehi['fecha_publica']);
+                $vehi_obj.setPatente($vehi['patente']);
+                //$vehi_obj.setTipo();
+                $vehi_obj.setCarroceria(CarroceriaDAO::getInstance().getCarroceriaPorId($vehi['id_carro']));
                 
             }
         }

@@ -1,5 +1,4 @@
 <?php
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -34,7 +33,7 @@ class ComunaDAO {
         if($this->_db->numRows($vdb)>0)
         {
             $com_array = $this->_db->fetchAll($vdb);
-            Comuna $com_obj = new Comuna();
+            $com_obj = new Comuna();
             foreach ($com_array as $comdb) {
                 $com_obj.setId_Comuna($comdb['id_com']);
                 $com_obj.setNombre($comdb['nombre']);
@@ -45,7 +44,7 @@ class ComunaDAO {
         }
         else
         {
-            return 0;
+            return null;
         }
         
     }

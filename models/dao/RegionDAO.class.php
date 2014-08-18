@@ -33,7 +33,7 @@ class RegionDAO {
         if($this->_db->numRows($vdb)>0)
         {
             $reg_array = $this->_db->fetchAll($vdb);
-            Region $reg_obj = new Region();
+            $reg_obj = new Region();
             foreach ($reg_array as $regdb) {
                 $reg_obj.setIdReg($regdb['id_reg']);
                 $reg_obj.setNombre($regdb['nombre']);                

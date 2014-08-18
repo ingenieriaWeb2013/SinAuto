@@ -34,7 +34,7 @@ class UsuarioDAO {
         if($this->_db->numRows($vdb)>0)
         {
             $user_array = $this->_db->fetchAll($vdb);
-            Usuario $user_obj = new Usuario();
+            $user_obj = new Usuario();
             foreach ($user_array as $usdb) {
                 $user_obj.setId_usuario($usdb['id_user']);
                 $user_obj.setNombre($usdb['nombre']);

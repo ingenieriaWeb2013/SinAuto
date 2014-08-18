@@ -14,6 +14,7 @@ class Vehiculo {
     private $idVehiculo;
     private $usuario;
     private $consecionaria;
+    private $fechaPublica;
     private $patente;
     private $tipo;
     private $carroceria;
@@ -43,7 +44,17 @@ class Vehiculo {
     private $espejos;
     private $video;
     
-    public function getVideo() {
+    
+    
+    public function getFechaPublica() {
+        return $this->fechaPublica;
+    }
+
+    public function setFechaPublica($fechaPublica) {
+        $this->fechaPublica = $fechaPublica;
+    }
+
+        public function getVideo() {
         return $this->video;
     }
 

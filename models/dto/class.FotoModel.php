@@ -16,6 +16,8 @@ class Foto {
     private $id_auto;
     private $ruta;
     
+    public function Foto(){}
+    
     public function getId_foto() {
         return $this->id_foto;
     }
