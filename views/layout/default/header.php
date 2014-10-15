@@ -2,7 +2,7 @@
 <html>
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="shortcut icon" href="<?php echo $_layoutParams['ruta_img']; ?>favicon.png" type="image/x-icon">
+		<link rel="shortcut icon" href="{IMG}favicon.png" type="image/x-icon">
 		<title>Motor - Vehicle Marketplace</title>
 		<meta name="keywords" content="Motor, Vehicle, Marketplace"> 
 		<meta name="description" content="Motor is a vehicle marketplace template">
@@ -14,12 +14,12 @@
         <![endif]-->
 	
 		<link rel="stylesheet" type="text/css" media="all" id="font_css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,300">
-		<link rel="stylesheet" type="text/css" media="all" id="icon_fontawesome_css" href="<?php echo $_layoutParams['ruta_css']; ?>font-awesome.css">
-		<link rel="stylesheet" type="text/css" media="all" id="icon_icomoon_css" href="<?php echo $_layoutParams['ruta_css']; ?>icomoon.css">
-		<link rel="stylesheet" type="text/css" media="all" id="fancybox-css" href="<?php echo $_layoutParams['ruta_css']; ?>jquery.fancybox-1.3.4.css">
-		<link rel="stylesheet" type="text/css" media="all" id="rs-settings-css" href="<?php echo $_layoutParams['ruta_css']; ?>revslider.css">
-		<link rel="stylesheet" type="text/css" media="all" id="main_css" href="<?php echo $_layoutParams['ruta_css']; ?>style.css">
-		<link rel="stylesheet" type="text/css" media="all" id="responsive_css" href="<?php echo $_layoutParams['ruta_css']; ?>responsive.css">
+		<link rel="stylesheet" type="text/css" media="all" id="icon_fontawesome_css" href="{CSS}font-awesome.css">
+		<link rel="stylesheet" type="text/css" media="all" id="icon_icomoon_css" href="{CSS}icomoon.css">
+		<link rel="stylesheet" type="text/css" media="all" id="fancybox-css" href="{CSS}jquery.fancybox-1.3.4.css">
+		<link rel="stylesheet" type="text/css" media="all" id="rs-settings-css" href="{CSS}revslider.css">
+		<link rel="stylesheet" type="text/css" media="all" id="main_css" href="{CSS}style.css">
+		<link rel="stylesheet" type="text/css" media="all" id="responsive_css" href="{CSS}responsive.css">
 </head>
 <body>
 
@@ -35,13 +35,13 @@
 				<div id="top_toolbar_user_lng">
 					<div>
 						<a id="language_button" class="language">
-							<img src="<?php echo $_layoutParams['ruta_img']; ?>en.png" alt="English">English
+							<img src="{IMG}en.png" alt="English">English
 						</a>
 						<ul id="language_selection">
-							<li><img src="<?php echo $_layoutParams['ruta_img']; ?>de.png" alt="Deutsch"><a href="#">Deutsch</a></li>
-							<li><img src="<?php echo $_layoutParams['ruta_img']; ?>it.png" alt="Italiano"><a href="#">Italiano</a></li>
-							<li><img src="<?php echo $_layoutParams['ruta_img']; ?>fr.png" alt="Francais"><a href="#">Francais</a></li>
-							<li><img src="<?php echo $_layoutParams['ruta_img']; ?>es.png" alt="Espanol"><a href="#">Espanol</a></li>
+							<li><img src="{IMG}de.png" alt="Deutsch"><a href="#">Deutsch</a></li>
+							<li><img src="{IMG}it.png" alt="Italiano"><a href="#">Italiano</a></li>
+							<li><img src="{IMG}fr.png" alt="Francais"><a href="#">Francais</a></li>
+							<li><img src="{IMG}es.png" alt="Espanol"><a href="#">Espanol</a></li>
 						</ul>
 					</div>
 
@@ -68,7 +68,7 @@
 		<div id="header_main" class="clearfix">
 			<div class="container_12">
 				<div id="logo" class="grid_3">
-					<img src="<?php echo $_layoutParams['ruta_img']; ?>logo.png" alt="Motor Logo">
+					<img src="{IMG}logo.png" alt="Motor Logo">
 				</div>
 				<nav class="grid_6">
 					<ul id="main_menu" class="clearfix">
