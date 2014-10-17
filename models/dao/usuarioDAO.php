@@ -11,7 +11,7 @@
  *
  * @author CarlosTapia
  */
-class UsuarioDAO {
+class UsuarioDAO extends Model{
     
     private static $instance=null;
 
@@ -19,10 +19,10 @@ class UsuarioDAO {
     }
     
     public static function getInstance(){//Singleton pattern
-        if ($instance==null) {
-            $instance = new UsuarioDAO();
+        if (UsuarioDAO::$instance==null) {
+            UsuarioDAO::$instance = new UsuarioDAO();
         }
-        return $instance;
+        return UsuarioDAO::$instance;
     }
     
     

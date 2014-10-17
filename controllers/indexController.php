@@ -14,8 +14,8 @@ class indexController extends Controller
     
     public function index()
     {
-        //$this->_view->titulo='ORISTRAVEL';
         $this->_view->renderizaPrincipal('index',true);
+        
     }
 }
 
