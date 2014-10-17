@@ -22,6 +22,8 @@ class Usuario {
     private $pass;
     private $comuna;
     
+    public function Usuario(){}
+    
     public function getNombre() {
         return $this->nombre;
     }

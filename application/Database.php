@@ -9,8 +9,18 @@
 class Database
 {
     protected $_conexion;
+    private $instance=null;
     
-    public function __construct() {
+    
+    
+    public static function getInstance(){//Singleton pattern
+        if ($instance==null) {
+            $instance = new Database();
+        }
+        return $instance;
+    }
+    
+    private function __construct() {
         $this->_conexion= mysql_connect(DB_HOST, DB_USER, DB_PASS);
         
         if(!empty($this->_conexion))

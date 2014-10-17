@@ -1,0 +1,242 @@
+	<div class="container_12 clearfix content">
+		<div class="grid_6">
+			<div class="box">
+				<h3>Registrate</h3>
+				<div class="box-content">
+					<form action="login/registrar">
+						<input type="text" placeholder="Correo" name="email">
+						<input type="password" placeholder="Contraseña" name="pass">
+						<input type="password" placeholder="Confirma tu contraseña" name="passagain">
+						<input type="text" placeholder="Nombre" name="name" class="bigger_margin">
+						<p class="smaller_margin"><label for="newsletter" class="custom_checkbox"><input type="checkbox" name="newsletter" id="newsletter"> Receive newsletter about updates and promotions.</label></p>
+						<p><label for="terms" class="custom_checkbox"><input type="checkbox" name="terms" id="terms">I agree to your <a href="#">terms of use</a> and <a href="#">privacy policy</a>.</label></p>
+						<p class="centered_content"><a class="button submit red">Registrarme</a></p>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="grid_6">
+			<div class="box">
+				<h3>Ingresa</h3>
+				<div class="box-content clearfix">
+					<form action="login/ingresar">
+						<input type="text" placeholder="Correo" name="email">
+						<input type="password" placeholder="Contraseña" name="pass">
+						<label for="remember_me" class="custom_checkbox remember_me"><input type="checkbox" name="remember_me" id="remember_me">Remember me</label>
+						<a class="button submit red right">Entrar</a>
+						<a href="#" class="forgotten_pass right">¿Olvidaste tu contraseña?</a>
+					</form>
+				</div>
+			</div>
+			<div class="box">
+				<h3>Facebook</h3>
+				<div class="box-content">
+					<p class="centered_content"><a href="login/facebook" class="button facebook wider">Ingresar con Facebook</a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container_12 clearfix" id="add_new_item_info">
+		<form action="#">
+			<div class="grid_8 bigger_margin">
+				<div class="box clearfix">
+					<h3>Vehicle info</h3>
+					<div class="box-content clearfix bordered_under">
+						<div class="half left">
+							<p>
+								<label for="type" class="dropdown_label">Type</label>
+								<select name="type" id="type" class="custom_select">
+									<option value="">Cars</option>
+									<option value="">Motorcycles</option>
+									<option value="">Trucks</option>
+								</select>
+							</p>
+							<p class="smaller_margin">
+								<label for="condition_new" class="custom_radio"><input type="radio" name="condition" id="condition_new" value="new">New items</label>
+								<label for="condition_used" class="custom_radio"><input type="radio" name="condition" id="condition_used" value="used">Used items</label>
+							</p>
+						</div>
+						<div class="half right">
+							<p>
+								<label for="category" class="dropdown_label">Category</label>
+								<select name="category" id="category" class="custom_select">
+									<option value="">Sedan</option>
+									<option value="">Hedgeback</option>
+									<option value="">Pick-up</option>
+								</select>
+							</p>
+						</div>
+					</div>
+					<div class="box-content clearfix">
+						<div class="half left">
+							<p>
+								<label for="location" class="dropdown_label">Location</label>
+								<select name="location" id="location" class="custom_select">
+									<option value="">New York</option>
+									<option value="">Chicago</option>
+									<option value="">Washington</option>
+									<option value="">Boston</option>
+								</select>
+							</p>
+							<p>
+								<label for="brand" class="dropdown_label">Brand</label>
+								<select name="brand" id="brand" class="custom_select">
+									<option value="">All</option>
+									<option value="">BMW</option>
+									<option value="">Mercedes</option>
+									<option value="">Audi</option>
+									<option value="">Ferrari</option>
+								</select>
+							</p>
+							<p>
+								<label for="model" class="dropdown_label">Model</label>
+								<select name="model" id="model" class="custom_select">
+									<option value="">All</option>
+									<option value="">C</option>
+									<option value="">E</option>
+									<option value="">S</option>
+									<option value="">CLK</option>
+									<option value="">SLK</option>
+								</select>
+							</p>
+							<p>
+								<label for="price_from" class="dropdown_label">Price range</label>
+								<select name="price_from" id="price_from" class="custom_select range">
+									<option value="">$5.000</option>
+									<option value="">$10.000</option>
+									<option value="">$15.000</option>
+									<option value="">$20.000</option>
+								</select>
+								<span class="range_delimiter">-</span> 
+								<select name="price_to" id="price_to" class="custom_select range">
+									<option value="">$5.000</option>
+									<option value="">$10.000</option>
+									<option value="">$15.000</option>
+									<option value="">$20.000</option>
+								</select>
+							</p>
+							<p>
+								<label for="exterior_color" class="dropdown_label">Exterior color</label>
+								<select name="exterior_color" id="exterior_color" class="custom_select">
+									<option value="">Black</option>
+									<option value="">White</option>
+									<option value="">Silver</option>
+									<option value="">Red</option>
+									<option value="">Blue</option>
+								</select>
+							</p>
+							<p>
+								<label for="interior_color" class="dropdown_label">Interior color</label>
+								<select name="interior_color" id="interior_color" class="custom_select">
+									<option value="">Dark grey</option>
+									<option value="">Dark brown</option>
+									<option value="">Light gray</option>
+								</select>
+							</p>
+						</div>
+						<div class="half right">
+							<p>
+								<label for="transmision" class="dropdown_label">Transmision</label>
+								<select name="transmision" id="transmision" class="custom_select">
+									<option value="">Manual</option>
+									<option value="">Semi-automatic</option>
+									<option value="">Automatic</option>
+								</select>
+							</p>
+							<p>
+								<label for="engine_from" class="dropdown_label">Engine range</label>
+								<select name="engine_from" id="engine_from" class="custom_select range">
+									<option value="">0,8</option>
+									<option value="">1,2</option>
+									<option value="">1,6</option>
+									<option value="">1,9</option>
+									<option value="">2,0</option>
+									<option value="">2,5</option>
+									<option value="">3,0</option>
+									<option value="">4,0</option>
+									<option value="">5,0</option>
+									<option value="">6,0</option>
+								</select>
+								<span class="range_delimiter">-</span>
+								<select name="engine_to" id="engine_to" class="custom_select range">
+									<option value="">0,8</option>
+									<option value="">1,2</option>
+									<option value="">1,6</option>
+									<option value="">1,9</option>
+									<option value="">2,0</option>
+									<option value="">2,5</option>
+									<option value="">3,0</option>
+									<option value="">4,0</option>
+									<option value="">5,0</option>
+									<option value="">6,0</option>
+								</select>
+							</p>
+							<p>
+								<label for="fuel" class="dropdown_label">Fuel</label>
+								<select name="fuel" id="fuel" class="custom_select">
+									<option value="">Gasoline</option>
+									<option value="">Diesel</option>
+									<option value="">LPG</option>
+								</select>
+							</p>
+							<p>
+								<label for="drive" class="dropdown_label">Drive</label>
+								<select name="drive" id="drive" class="custom_select">
+									<option value="">Front-wheel</option>
+									<option value="">Rear-wheel</option>
+									<option value="">4x4</option>
+								</select>
+							</p>
+							<p>
+								<label for="milage_from" class="dropdown_label">Mileage</label>
+								<select name="milage_from" id="milage_from" class="custom_select range">
+									<option value="">5.000</option>
+									<option value="">10.000</option>
+									<option value="">15.000</option>
+									<option value="">20.000</option>
+									<option value="">40.000</option>
+									<option value="">60.000</option>
+								</select>
+								<span class="range_delimiter">-</span>
+								<select name="milage_to" id="milage_to" class="custom_select range">
+									<option value="">5.000</option>
+									<option value="">10.000</option>
+									<option value="">15.000</option>
+									<option value="">20.000</option>
+									<option value="">40.000</option>
+									<option value="">60.000</option>
+								</select>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="box">
+					<h3>Vehicle description</h3>
+					<div class="box-content">
+						<textarea name="description" id="description" placeholder="Enter your description"></textarea>
+					</div>
+				</div>
+				<a class="button submit green">Create Listing</a>
+			</div>
+			<div class="grid_4">
+				<div class="box">
+					<h3>Add Photos</h3>
+					<div class="box-content">
+						<p class="centered_content">
+							<a href="#" class="button red">Upload photos</a>
+						</p>
+					</div>
+				</div>
+	
+				<div class="box">
+					<h3>Sell options</h3>
+					<div class="box-content">
+						<p><label for="negotiable" class="custom_checkbox"><input type="checkbox" name="negotiable" id="negotiable">Price is negotiable</label></p>
+						<p><label for="exchange" class="custom_checkbox"><input type="checkbox" name="exchange" id="exchange">Possible exchange</label></p>
+						<a href="#">Learn more about rating system</a>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>

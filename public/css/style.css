@@ -289,7 +289,7 @@ License: Teamforest licence
 
 	ul{
 		margin-left: 20px;
-		list-style: square url("../images/ul_dash.png");
+		list-style: square url("../img/ul_dash.png");
 	}
 
 	.sidebar{
@@ -323,7 +323,7 @@ License: Teamforest licence
 	}
 
 	.box h3{
-		background: #eeeeee url("../images/box_title_bg.png") bottom repeat-x;
+		background: #eeeeee url("../img/box_title_bg.png") bottom repeat-x;
 		font-weight: 700;
 		font-size: 15px;
 		text-transform: uppercase;
@@ -417,7 +417,7 @@ License: Teamforest licence
 		-moz-border-radius: 4px;
 		-webkit-border-radius: 4px;
 		border-radius: 4px;
-		background:#fff url("../images/dropdown_arrow.png") no-repeat 97% 50%;
+		background:#fff url("../img/dropdown_arrow.png") no-repeat 97% 50%;
 	}
 
 	.custom_select{
@@ -443,27 +443,27 @@ License: Teamforest licence
 	}
 
 	.custom_radio{
-		background: url("../images/radio.png") 0px 0px no-repeat;
+		background: url("../img/radio.png") 0px 0px no-repeat;
 	}
 
 	.radio_on{
-		background: url("../images/radio.png") 0px -23px no-repeat;
+		background: url("../img/radio.png") 0px -23px no-repeat;
 	}
 
 	.custom_radio_light.radio_on{
-		background: url("../images/radio.png") 0px -46px no-repeat;
+		background: url("../img/radio.png") 0px -46px no-repeat;
 	}
 
 	.custom_checkbox{
-		background: url("../images/checkbox.png") 0px 2px no-repeat;
+		background: url("../img/checkbox.png") 0px 2px no-repeat;
 	}
 
 	.checkbox_on{
-		background: url("../images/checkbox.png") 0px -17px no-repeat;
+		background: url("../img/checkbox.png") 0px -17px no-repeat;
 	}
 
 	.custom_checkbox_light.checkbox_on{
-		background: url("../images/checkbox.png") 0px -36px no-repeat;
+		background: url("../img/checkbox.png") 0px -36px no-repeat;
 	}
 
 	.custom_checkbox input,
@@ -678,7 +678,7 @@ License: Teamforest licence
 		display: inline-block;
 		padding-right: 18px;
 		margin-right: 18px;
-		background: url("../images/top_toolbar_menu_devider.png") 100% 50% no-repeat;
+		background: url("../img/top_toolbar_menu_devider.png") 100% 50% no-repeat;
 	}
 
 	.top_toolbar_menu li:last-child{
@@ -715,7 +715,7 @@ License: Teamforest licence
 	}
 
 	#top_toolbar_user_lng .language{
-		background: url("../images/dropdown_arrow.png") 95% 50% no-repeat;
+		background: url("../img/dropdown_arrow.png") 95% 50% no-repeat;
 		color: #444;
 		width: 150px;
 	}
@@ -1008,7 +1008,7 @@ License: Teamforest licence
 		content: "";
 		width: 8px;
 		height: 4px;
-		background: url("../images/blog_comments_ballon_after.png") no-repeat;		
+		background: url("../img/blog_comments_ballon_after.png") no-repeat;		
 		position: absolute;
 		bottom: -4px;
 		right: 4px;
@@ -1065,7 +1065,7 @@ License: Teamforest licence
 	.post_tags{
 		font-weight: 300;
 		color: #b3b3b3;
-		background: url("../images/hashtag.png") 0 3px no-repeat;
+		background: url("../img/hashtag.png") 0 3px no-repeat;
 		padding-left: 20px;
 		line-height: 13px;
 		padding-top: 0;
@@ -1365,7 +1365,7 @@ License: Teamforest licence
 
 /*-------- 07.d. download callout box --------*/
 	.download_callout_box{
-		background: #f7f7f7 url(../images/callout_box_bg.png) top center no-repeat;
+		background: #f7f7f7 url(../img/callout_box_bg.png) top center no-repeat;
 		padding: 28px;
 		border: 1px solid #e5e5e5;
 		-webkit-border-radius: 4px;
@@ -1695,7 +1695,7 @@ License: Teamforest licence
 
 /*-------- 07.j. widget search filter --------*/
 	.widget_search_filter .box-content{
-		background: url("../images/box_title_bg.png") bottom repeat-x;
+		background: url("../img/box_title_bg.png") bottom repeat-x;
 	}
 
 	.widget_search_filter .box-content:last-child{
@@ -1961,7 +1961,7 @@ License: Teamforest licence
 		-webkit-border-radius: 4px 0 0 4px;
 		-moz-border-radius: 4px 0 0 4px;
 		border-radius: 4px 0 0 4px;
-		background: #bcbcbc url(../images/list_view.png) 50% 50% no-repeat;
+		background: #bcbcbc url(../img/list_view.png) 50% 50% no-repeat;
 	}
 
 	.sort_grid{
@@ -1969,7 +1969,7 @@ License: Teamforest licence
 		-webkit-border-radius: 0 4px 4px 0;
 		-moz-border-radius: 0 4px 4px 0;
 		border-radius: 0 4px 4px 0;
-		background: #bcbcbc url(../images/grid_view.png) 50% 50% no-repeat;
+		background: #bcbcbc url(../img/grid_view.png) 50% 50% no-repeat;
 	}
 
 	.sort_list:hover,
@@ -2017,7 +2017,7 @@ License: Teamforest licence
 		right: 0;
 		width: 139px;
 		padding-left: 20px;
-		background: url("../images/vendor.png") 0 1px no-repeat;
+		background: url("../img/vendor.png") 0 1px no-repeat;
 	}
 
 	.list_item .item_info{
@@ -2144,7 +2144,7 @@ License: Teamforest licence
 
 	.item_main .vendor{
 		padding-left: 20px;
-		background: url("../images/vendor.png") 0 1px no-repeat;
+		background: url("../img/vendor.png") 0 1px no-repeat;
 		color: #b3b3b3;
 		font-weight: 300;
 		margin-bottom: 10px;
@@ -2181,7 +2181,7 @@ License: Teamforest licence
 /*-------- 07.u. search results item info --------*/
 	span.item_rating, span.item_rating span {
 	    display: block;
-	    background: url(../images/stars.png) 0 -15px repeat-x;
+	    background: url(../img/stars.png) 0 -15px repeat-x;
 	    width: 70px;
 	    height: 15px;
 	    position: absolute;
@@ -2197,47 +2197,47 @@ License: Teamforest licence
 	}
 	
 	.item_year{
-		background: url("../images/calendar.png") 0 1px no-repeat;
+		background: url("../img/calendar.png") 0 1px no-repeat;
 		padding-left: 20px;
 	}
 
 	.item_type{
-		background: url("../images/car.png") 0 6px no-repeat;
+		background: url("../img/car.png") 0 6px no-repeat;
 		padding-left: 20px;
 	}
 
 	.item_drive{
-		background: url("../images/drive.png") 0 6px no-repeat;
+		background: url("../img/drive.png") 0 6px no-repeat;
 		padding-left: 20px;
 	}
 
 	.item_engine{
-		background: url("../images/engine.png") 0 4px no-repeat;
+		background: url("../img/engine.png") 0 4px no-repeat;
 		padding-left: 20px;
 	}
 
 	.item_transimition{
-		background: url("../images/transmision.png") 0 4px no-repeat;
+		background: url("../img/transmision.png") 0 4px no-repeat;
 		padding-left: 20px;
 	}
 
 	.item_fuel{
-		background: url("../images/fuel.png") 0 4px no-repeat;
+		background: url("../img/fuel.png") 0 4px no-repeat;
 		padding-left: 20px;
 	}
 
 	.item_mileage{
-		background: url("../images/mileage.png") 0 6px no-repeat;
+		background: url("../img/mileage.png") 0 6px no-repeat;
 		padding-left: 20px;
 	}
 
 	.item_color{
-		background: url("../images/color.png") 0 3px no-repeat;
+		background: url("../img/color.png") 0 3px no-repeat;
 		padding-left: 20px;
 	}
 
 	.item_interior_color{
-		background: url("../images/seats.png") 0px 6px no-repeat;
+		background: url("../img/seats.png") 0px 6px no-repeat;
 		padding-left: 20px;
 	}
 
@@ -2315,12 +2315,12 @@ License: Teamforest licence
 	}
 
 	#featured_items .item_year{
-		background: url("../images/calendar.png") 0 1px no-repeat;
+		background: url("../img/calendar.png") 0 1px no-repeat;
 		padding-left: 20px;
 	}
 
 	#featured_items .item_engine{
-		background: url("../images/engine.png") 0 3px no-repeat;
+		background: url("../img/engine.png") 0 3px no-repeat;
 		padding-left: 20px;
 	}
 
@@ -2347,7 +2347,7 @@ License: Teamforest licence
 
 	#featured_news .post_date{
 		display: block;
-		background: url("../images/calendar.png") 0 1px no-repeat;
+		background: url("../img/calendar.png") 0 1px no-repeat;
 		padding-left: 20px;
 		color: #afafaf;
 		padding-bottom: 10px;

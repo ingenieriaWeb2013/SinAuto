@@ -11,7 +11,7 @@
  *
  * @author CarlosTapia
  */
-class UsuarioDAO {
+class UsuarioDAO extends Model{
     
     private static $instance=null;
 
@@ -19,10 +19,10 @@ class UsuarioDAO {
     }
     
     public static function getInstance(){//Singleton pattern
-        if ($instance==null) {
-            $instance = new UsuarioDAO();
+        if (UsuarioDAO::$instance==null) {
+            UsuarioDAO::$instance = new UsuarioDAO();
         }
-        return $instance;
+        return UsuarioDAO::$instance;
     }
     
     
@@ -34,7 +34,7 @@ class UsuarioDAO {
         if($this->_db->numRows($vdb)>0)
         {
             $user_array = $this->_db->fetchAll($vdb);
-            Usuario $user_obj = new Usuario();
+            $user_obj = new Usuario();
             foreach ($user_array as $usdb) {
                 $user_obj.setId_usuario($usdb['id_user']);
                 $user_obj.setNombre($usdb['nombre']);

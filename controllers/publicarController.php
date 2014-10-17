@@ -6,7 +6,7 @@
  * Fecha    : Jueves, 07 de agosto de 2014
  */
 
-class indexController extends Controller
+class publicarController extends Controller
 {
     public function __construct() {
         parent::__construct();

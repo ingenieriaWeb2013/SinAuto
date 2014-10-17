@@ -16,6 +16,8 @@ class Comuna {
     private $region;
     private $nombre;
     
+    public function Comuna(){}
+    
     public function getIdComuna() {
         return $this->id_comuna;
     }
