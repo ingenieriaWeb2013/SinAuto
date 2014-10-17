@@ -41,7 +41,7 @@
 					<div id="login_form" class="box">
 						<h3>Entrar a SinAuto</h3>
 						<div class="box-content clearfix">
-							<form action="<?php echo BASE_URL ?>login/ingresar">
+							<form action="login/ingresar">
 								<input type="text" placeholder="usuario@ejemplo.com" name="email">
 								<input type="password" placeholder="Contraseña" name="pass">
 								<label for="remember" class="custom_checkbox remember_me"><input type="checkbox" name="remember" id="remember">Recordarme</label>
@@ -65,7 +65,7 @@
                                         </ul>
 				</nav>
 				<div id="add_listing" class="grid_3">
-					<a href="add_item.html" class="button green big wide">Vente tu auto</a>
+					<a href="publicar" class="button green big wide">Vente tu auto</a>
 				</div>
 			</div>
 		</div>
