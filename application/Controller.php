@@ -10,7 +10,7 @@ abstract class Controller
 {
     protected $_view;
     
-    public function __construct() {
+    public function Controller() {
         $this->_view= new view(new Request());
     }
     

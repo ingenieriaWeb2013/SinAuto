@@ -9,7 +9,7 @@
 class Model
 {
     protected $_db;
-    public function __construct() {
+    public function Model() {
         $this->_db= Database::getInstance();
     }
 }

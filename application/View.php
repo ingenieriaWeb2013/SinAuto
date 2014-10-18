@@ -9,11 +9,9 @@
 class View 
 {
     private $_controlador;
-    private $_js;
     
-    public function __construct(Request $peticion) { //$peticion es un objeto de Request
+    public function View(Request $peticion) { //$peticion es un objeto de Request
         $this->_controlador= $peticion->getControlador();
-        $this->_js=array();
     }
     
     

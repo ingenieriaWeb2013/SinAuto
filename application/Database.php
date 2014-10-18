@@ -9,20 +9,19 @@
 class Database
 {
     protected $_conexion;
-    private $instance=null;
+    private static $instance=null;
     
     
     
     public static function getInstance(){//Singleton pattern
-        if ($instance==null) {
-            $instance = new Database();
+        if (self::$instance==null) {
+            self::$instance = new Database();
         }
-        return $instance;
+        return self::$instance;
     }
     
-    private function __construct() {
+    private function Database() {
         $this->_conexion= mysql_connect(DB_HOST, DB_USER, DB_PASS);
-        
         if(!empty($this->_conexion))
         {
             $bd= mysql_select_db(DB_NAME, $this->_conexion);

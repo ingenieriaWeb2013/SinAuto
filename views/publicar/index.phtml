@@ -57,6 +57,7 @@
 								<label for="condition_used" class="custom_radio"><input type="radio" name="condition" id="condition_used" value="used">Used items</label>
 							</p>
 						</div>
+                       
 						<div class="half right">
 							<p>
 								<label for="category" class="dropdown_label">Category</label>
@@ -67,6 +68,36 @@
 								</select>
 							</p>
 						</div>
+                                                
+					</div>
+                                        <div class="box-content clearfix bordered_under">
+						<div class="half left">
+							<p>
+								<label for="marca" class="dropdown_label">Marca</label>
+								<select name="marca" id="type" class="custom_select">
+                                                                    <?php 
+                                                                    echo "hola";
+                                                                    echo var_dump($this->_view->objMarcas);
+                                                                    
+                                                                    foreach ($this->_view->objMarcas  as $marca) { 
+									echo '<option value="'.$marca->getIdMarca().'">'.$marca->getNombre().'</option>';
+                                                                    } ?>
+								</select>
+							</p>
+		
+						</div>
+                       
+						<div class="half right">
+							<p>
+								<label for="category" class="dropdown_label">Category</label>
+								<select name="category" id="category" class="custom_select">
+									<option value="">Sedan</option>
+									<option value="">Hedgeback</option>
+									<option value="">Pick-up</option>
+								</select>
+							</p>
+						</div>
+                                                
 					</div>
 					<div class="box-content clearfix">
 						<div class="half left">
