@@ -16,15 +16,13 @@ class View
     
     
     public function renderizaPrincipal($vista)
-    {
-        
-        $rutaView= ROOT . 'views' . DS . $this->_controlador . DS . $vista . '.phtml';
-        
+    {       
+        $rutaView= ROOT . 'views' . DS . $this->_controlador . DS . $vista . '.phtml';      
         if(is_readable($rutaView))
         {   
-            require_once ROOT . 'views' . DS . 'layout' . DS . DEFAULT_LAYOUT . DS . 'header.php';
-            require_once $rutaView;
-            require_once ROOT . 'views' . DS . 'layout' . DS . DEFAULT_LAYOUT . DS . 'footer.php';
+            include_once ROOT . 'views' . DS . 'layout' . DS . DEFAULT_LAYOUT . DS . 'header.php';
+            include_once $rutaView;
+            include_once ROOT . 'views' . DS . 'layout' . DS . DEFAULT_LAYOUT . DS . 'footer.php';
         }
         else
         {

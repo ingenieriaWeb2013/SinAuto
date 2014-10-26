@@ -30,7 +30,6 @@ class MarcaDAO extends Model{
     
     public function getMarcas(){
         $vdb= $this->_db->consulta('SELECT * FROM marca');
-        
         if($this->_db->numRows($vdb)>0)
         {
             $marca_array = $this->_db->fetchAll($vdb);    

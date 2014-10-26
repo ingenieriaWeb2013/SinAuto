@@ -76,12 +76,11 @@
 								<label for="marca" class="dropdown_label">Marca</label>
 								<select name="marca" id="type" class="custom_select">
                                                                     <?php 
-                                                                    echo "hola";
-                                                                    echo var_dump($this->_view->objMarcas);
+                                                            
                                                                     
-                                                                    foreach ($this->_view->objMarcas  as $marca) { 
-									echo '<option value="'.$marca->getIdMarca().'">'.$marca->getNombre().'</option>';
-                                                                    } ?>
+                                                                   foreach ($this->objMarcas  as $marca) { 
+                                                                        echo '<option value="'.$marca->getIdMarca().'">'.$marca->getNombre().'</option>';
+                                                                   } ?>
 								</select>
 							</p>
 		

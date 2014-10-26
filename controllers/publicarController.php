@@ -15,8 +15,9 @@ class publicarController extends Controller
     
     public function index()
     {
-        $this->_view->renderizaPrincipal('index',true);
+        
         $this->_view->objMarcas = $this->_marca->getMarcas();
+        $this->_view->renderizaPrincipal('index',true);
     }
 }
 

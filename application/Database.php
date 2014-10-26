@@ -21,11 +21,15 @@ class Database
     }
     
     private function Database() {
-        $this->_conexion= mysql_connect(DB_HOST, DB_USER, DB_PASS);
-        if(!empty($this->_conexion))
+        //$this->_conexion= mysql_connect(DB_HOST, DB_USER, DB_PASS);
+          $this->_conexion= new mysqli (DB_HOST, DB_USER, DB_PASS); 
+          
+        //if(!empty($this->_conexion))
+        if(!$this->_conexion->connect_errno)
         {
-            $bd= mysql_select_db(DB_NAME, $this->_conexion);
-            if($bd!=1)
+            //$bd= mysql_select_db(DB_NAME, $this->_conexion);
+            $this->_conexion->select_db(DB_NAME);
+            if($this->_conexion->connect_errno)
             {
                 throw new Exception('Base de datos no encontrada');
             }
@@ -42,7 +46,8 @@ class Database
     
     public function consulta($query)
     {
-        $rs= mysql_query($query, $this->_conexion);
+        //$rs= mysql_query($query, $this->_conexion);
+        $rs =  $this->_conexion->query($query);
         if(empty($rs))
         {
            return FALSE; 
@@ -55,24 +60,25 @@ class Database
     
     public function fetchAll($consulta)
     {
-        $arrayFetch=array();
-        while($reg = mysql_fetch_array($consulta))
-        {
-                $arrayFetch[]= $reg;
-        }
-
-        return $arrayFetch;
+        //$arrayFetch=array();
+        //while($reg = mysql_fetch_array($consulta))
+        //{
+        //        $arrayFetch[]= $reg;
+        //}
+        return $consulta->fetch_all(MYSQLI_ASSOC); 
+        //return $arrayFetch;
     }
     
     
     public function numRows($consulta)
     {
-        return mysql_num_rows($consulta);
+        //return mysql_num_rows($consulta);
+        return $consulta->num_rows;
     }
 
 
     public function closeConex()
     {
-        return mysql_close($this->conexion);
+        return $this->_conexion->close();
     }
 }
