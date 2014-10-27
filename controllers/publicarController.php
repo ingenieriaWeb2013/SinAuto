@@ -8,14 +8,16 @@
 
 class publicarController extends Controller
 {
-    public function __construct() {
-        parent::__construct();
+    public function publicarController() {
+        parent::Controller();
+        $this->_marca= $this->loadModel('marca'); 
     }
     
     public function index()
     {
-        $this->_view->renderizaPrincipal('index',true);
         
+        $this->_view->objMarcas = $this->_marca->getMarcas();
+        $this->_view->renderizaPrincipal('index',true);
     }
 }
 

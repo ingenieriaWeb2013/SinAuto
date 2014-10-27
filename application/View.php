@@ -9,24 +9,20 @@
 class View 
 {
     private $_controlador;
-    private $_js;
     
-    public function __construct(Request $peticion) { //$peticion es un objeto de Request
+    public function View(Request $peticion) { //$peticion es un objeto de Request
         $this->_controlador= $peticion->getControlador();
-        $this->_js=array();
     }
     
     
     public function renderizaPrincipal($vista)
-    {
-        
-        $rutaView= ROOT . 'views' . DS . $this->_controlador . DS . $vista . '.phtml';
-        
+    {       
+        $rutaView= ROOT . 'views' . DS . $this->_controlador . DS . $vista . '.phtml';      
         if(is_readable($rutaView))
         {   
-            require_once ROOT . 'views' . DS . 'layout' . DS . DEFAULT_LAYOUT . DS . 'header.php';
-            require_once $rutaView;
-            require_once ROOT . 'views' . DS . 'layout' . DS . DEFAULT_LAYOUT . DS . 'footer.php';
+            include_once ROOT . 'views' . DS . 'layout' . DS . DEFAULT_LAYOUT . DS . 'header.php';
+            include_once $rutaView;
+            include_once ROOT . 'views' . DS . 'layout' . DS . DEFAULT_LAYOUT . DS . 'footer.php';
         }
         else
         {

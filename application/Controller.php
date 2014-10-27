@@ -10,7 +10,7 @@ abstract class Controller
 {
     protected $_view;
     
-    public function __construct() {
+    public function Controller() {
         $this->_view= new view(new Request());
     }
     
@@ -22,7 +22,6 @@ abstract class Controller
         $dto= $class . 'DTO';
         $rutaDAO= ROOT . 'models' . DS . 'dao'. DS .$dao . '.php';
         $rutaDTO= ROOT . 'models' . DS . 'dto'. DS .$dto . '.php';
-        $rutaDetalleDTO= ROOT . 'models' . DS . 'dto'. DS . 'detalle' .$dto . '.php';
         
         if(is_readable($rutaDAO))
         {
@@ -30,11 +29,6 @@ abstract class Controller
             {
                 require_once $rutaDAO;
                 require_once $rutaDTO;
-                
-                if(is_readable($rutaDetalleDTO))
-                {
-                    require_once $rutaDetalleDTO;
-                }
                 
                 $dao= $dao::getInstance();
                 return $dao; //retorna la instancia del modelo

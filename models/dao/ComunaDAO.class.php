@@ -28,6 +28,7 @@ class ComunaDAO {
     
     public function getComunaPorId($id){
         
+
         $vdb= $this->_db->consulta('SELECT * FROM comuna WHERE id_com ="'.$id.'"');
         
         if($this->_db->numRows($vdb)>0)
