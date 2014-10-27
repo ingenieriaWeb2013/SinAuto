@@ -30,7 +30,7 @@ abstract class Controller
                 require_once $rutaDAO;
                 require_once $rutaDTO;
                 
-                $dao= $dao::getInstance();
+                //$dao= $dao::getInstance();
                 return $dao; //retorna la instancia del modelo
             }
             else
