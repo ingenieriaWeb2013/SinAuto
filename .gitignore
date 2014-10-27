@@ -1,4 +1,10 @@
 $ cat .gitignore
 application/Config.php
+<<<<<<< HEAD
 nbproject/
 *~
+=======
+script/.DS_Store
+nbproject/
+*~	
+>>>>>>> 957d000d65fae890d98da10936aff62793d8887c
