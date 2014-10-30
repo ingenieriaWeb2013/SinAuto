@@ -30,7 +30,7 @@
 				<ul class="top_toolbar_menu">
 					<li><a href="index.html">Mi Cuenta</a></li>
 					<li><a href="about.html">Vender</a></li>
-					<li><a href="about.html">Configuración</a></li>
+					<li><a href="about.html">Configuraci&oacute;n</a></li>
 				</ul>
 				<div id="top_toolbar_user_lng">
 					<a href="#login_form" class="user show_login_form">
