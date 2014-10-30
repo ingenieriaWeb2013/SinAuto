@@ -15,7 +15,7 @@ class Marca {
     private $idMarca;
     private $nombre;
     
-    public function Marca(){}
+    //public function Marca(){}
     
     public function getNombre() {
         return $this->nombre;

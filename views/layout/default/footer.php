@@ -44,7 +44,7 @@
 		<div class="clearfix">
 			<div class="container_12">
 				<div id="logo_footer" class="grid_4">
-					<img src="<?php echo IMG ?>logo_footer.png" alt="Motor Logo">
+					<img src="<?php echo $_layoutParams['ruta_img']; ?>logo_footer.png" alt="Motor Logo">
 				</div>
 				<nav class="grid_5">
 					<ul id="footer_menu" class="clearfix">

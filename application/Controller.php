@@ -31,6 +31,7 @@ abstract class Controller
                 require_once $rutaDTO;
                 
                 //$dao= $dao::getInstance();
+                $dao= new $dao;
                 return $dao; //retorna la instancia del modelo
             }
             else

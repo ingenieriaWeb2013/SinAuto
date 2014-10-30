@@ -13,7 +13,7 @@
  */
 class MarcaDAO extends Model{
     
-    private static $instance=null;
+    /*private static $instance=null;
 
     private function MarcaDAO(){ 
         parent::Model();
@@ -25,7 +25,7 @@ class MarcaDAO extends Model{
         }
         return self::$instance;
     }
-    
+    */
     
     
     public function getMarcas(){
@@ -45,7 +45,7 @@ class MarcaDAO extends Model{
         }
         else
         {
-            return 0;
+            return false;
         }
         
     }

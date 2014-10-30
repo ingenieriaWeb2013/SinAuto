@@ -1,16 +1,24 @@
 <?php
 
 /* 
- * Proyecto : Sin auto
+ * Proyecto : SinAuto
  * Autor    : IngenieriaWeb Ltda.
  * Fecha    : Jueves, 07 de agosto de 2014
  */
 
+error_reporting(E_ALL);
 ini_set('display_errors', 1);
-header('Content-Type: text/html; charset=UTF-8');
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', realpath(dirname(__FILE__)) . DS);
 define('APP_PATH', ROOT . 'application' . DS);
+//define('CHARSET', 'ISO-8859-1');
+define('CHARSET', 'UTF-8');
+//ini_set('mssql.charset', CHARSET);
+session_name('5in4uTo');
+session_cache_limiter('nocache');
+date_default_timezone_set('America/Santiago');
+//date_default_timezone_set('America/Argentina/Buenos_Aires');
+header('Content-Type: text/html; charset=' . CHARSET);
 
 try
 {
