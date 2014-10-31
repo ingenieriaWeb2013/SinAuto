@@ -15,8 +15,15 @@ class View
     }
     
     
-    public function renderizaPrincipal($vista)
+    public function renderingMain($vista)
     {       
+        $_layoutParams= array(
+            'ruta_css' => BASE_URL . 'public/css/', 
+            'ruta_img' => BASE_URL . 'public/img/', 
+            'ruta_js' => BASE_URL . 'public/js/'
+            //'js' => $js
+        );
+        
         $rutaView= ROOT . 'views' . DS . $this->_controlador . DS . $vista . '.phtml';      
         if(is_readable($rutaView))
         {   

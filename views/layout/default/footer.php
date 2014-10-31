@@ -44,7 +44,7 @@
 		<div class="clearfix">
 			<div class="container_12">
 				<div id="logo_footer" class="grid_4">
-					<img src="<?php echo IMG ?>logo_footer.png" alt="Motor Logo">
+					<img src="<?php echo $_layoutParams['ruta_img']; ?>logo_footer.png" alt="Motor Logo">
 				</div>
 				<nav class="grid_5">
 					<ul id="footer_menu" class="clearfix">
@@ -64,16 +64,16 @@
     </footer>
 
 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-	<script src="<?php echo JS ?>jquery-1.9.1.min.js"></script>
-	<script src="<?php echo JS ?>superfish.js"></script>
-	<script src='<?php echo JS ?>jquery.themepunch.plugins.min.js'></script>
-	<script src='<?php echo JS ?>jquery.themepunch.revolution.min.js'></script>
-	<script src="<?php echo JS ?>form_style.js"></script>
-	<script src="<?php echo JS ?>bootstrap.min.js"></script>
-	<script src="<?php echo JS ?>jquery.placeholder.min.js"></script>
-	<script src="<?php echo JS ?>jquery.fancybox-1.3.4.js"></script>
-	<script src="<?php echo JS ?>jquery.gmap.min.js"></script>
-	<script src="<?php echo JS ?>custom.js"></script>
+	<script src="<?php echo $_layoutParams['ruta_js']; ?>jquery-1.9.1.min.js"></script>
+	<script src="<?php echo $_layoutParams['ruta_js']; ?>superfish.js"></script>
+	<script src='<?php echo $_layoutParams['ruta_js']; ?>jquery.themepunch.plugins.min.js'></script>
+	<script src='<?php echo $_layoutParams['ruta_js']; ?>jquery.themepunch.revolution.min.js'></script>
+	<script src="<?php echo $_layoutParams['ruta_js']; ?>form_style.js"></script>
+	<script src="<?php echo $_layoutParams['ruta_js']; ?>bootstrap.min.js"></script>
+	<script src="<?php echo $_layoutParams['ruta_js']; ?>jquery.placeholder.min.js"></script>
+	<script src="<?php echo $_layoutParams['ruta_js']; ?>jquery.fancybox-1.3.4.js"></script>
+	<script src="<?php echo $_layoutParams['ruta_js']; ?>jquery.gmap.min.js"></script>
+	<script src="<?php echo $_layoutParams['ruta_js']; ?>custom.js"></script>
 
 </body>
 </html>

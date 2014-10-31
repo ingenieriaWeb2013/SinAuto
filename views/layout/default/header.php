@@ -2,7 +2,7 @@
 <html>
 <head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="shortcut icon" href="<?php echo IMG ;?>favicon.png" type="image/x-icon">
+		<link rel="shortcut icon" href="<?php echo $_layoutParams['ruta_img']; ?>favicon.png" type="image/x-icon">
 		<title>SinAuto</title>
 		<meta name="keywords" content="Motor, Vehicle, Marketplace"> 
 		<meta name="description" content="Motor is a vehicle marketplace template">
@@ -15,12 +15,12 @@
                
 	
 		<link rel="stylesheet" type="text/css" media="all" id="font_css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,800,300">
-		<link rel="stylesheet" type="text/css" media="all" id="icon_fontawesome_css" href="<?php echo CSS ?>font-awesome.css">
-		<link rel="stylesheet" type="text/css" media="all" id="icon_icomoon_css" href="<?php echo CSS ?>icomoon.css">
-		<link rel="stylesheet" type="text/css" media="all" id="fancybox-css" href="<?php echo CSS ?>jquery.fancybox-1.3.4.css">
-		<link rel="stylesheet" type="text/css" media="all" id="rs-settings-css" href="<?php echo CSS ?>revslider.css">
-		<link rel="stylesheet" type="text/css" media="all" id="main_css" href="<?php echo CSS ?>style.css">
-		<link rel="stylesheet" type="text/css" media="all" id="responsive_css" href="<?php echo CSS ?>responsive.css">
+		<link rel="stylesheet" type="text/css" media="all" id="icon_fontawesome_css" href="<?php echo $_layoutParams['ruta_css']; ?>font-awesome.css">
+		<link rel="stylesheet" type="text/css" media="all" id="icon_icomoon_css" href="<?php echo $_layoutParams['ruta_css']; ?>icomoon.css">
+		<link rel="stylesheet" type="text/css" media="all" id="fancybox-css" href="<?php echo $_layoutParams['ruta_css']; ?>jquery.fancybox-1.3.4.css">
+		<link rel="stylesheet" type="text/css" media="all" id="rs-settings-css" href="<?php echo $_layoutParams['ruta_css']; ?>revslider.css">
+		<link rel="stylesheet" type="text/css" media="all" id="main_css" href="<?php echo $_layoutParams['ruta_css']; ?>style.css">
+		<link rel="stylesheet" type="text/css" media="all" id="responsive_css" href="<?php echo $_layoutParams['ruta_css']; ?>responsive.css">
 </head>
 <body>
 
@@ -30,7 +30,7 @@
 				<ul class="top_toolbar_menu">
 					<li><a href="index.html">Mi Cuenta</a></li>
 					<li><a href="about.html">Vender</a></li>
-					<li><a href="about.html">Configuración</a></li>
+					<li><a href="about.html">Configuraci&oacute;n</a></li>
 				</ul>
 				<div id="top_toolbar_user_lng">
 					<a href="#login_form" class="user show_login_form">
@@ -56,7 +56,7 @@
 		<div id="header_main" class="clearfix">
 			<div class="container_12">
 				<div id="logo" class="grid_3">
-					<img src="<?php echo IMG ;?>logo.png" alt="Motor Logo">
+					<img src="<?php echo $_layoutParams['ruta_img']; ?>logo.png" alt="Motor Logo">
 				</div>
 				<nav class="grid_6">
 					<ul id="main_menu" class="clearfix">
