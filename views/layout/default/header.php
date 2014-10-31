@@ -65,7 +65,7 @@
                                         </ul>
 				</nav>
 				<div id="add_listing" class="grid_3">
-					<a href="publicar" class="button green big wide">Vente tu auto</a>
+					<a href="publicar" class="button green big wide">Publicar</a>
 				</div>
 			</div>
 		</div>

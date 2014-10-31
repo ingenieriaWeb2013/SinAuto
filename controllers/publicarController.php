@@ -16,19 +16,14 @@ class publicarController extends Controller
     
     public function index()
     {
-        $this->_marca= $this->loadModel('marca');
-        $this->_tipo= $this->loadModel('tipo');
-        
-<<<<<<< HEAD
-   
-        $this->_view->objMarcas = $this->_marca->getMarcas();
-        $this->_view->objTipos  = $this->_tipo->getTipos();
-        $this->_view->renderizaPrincipal('index',true);
-=======
-        //$this->_marca->getMarcas();
-        $this->_view->objMarcas = $this->_marca->getMarcas();
+        $this->_marca   = $this->loadModel('Marca');
+        $this->_tipo    = $this->loadModel('Tipo');
+        $this->_carro    = $this->loadModel('Carroceria');
+       
+        $this->_view->objMarcas         = $this->_marca->getMarcas();
+        $this->_view->objTipos          = $this->_tipo->getTipos();
+        $this->_view->objCarrocerias    = $this->_carro->getCarrocerias();
         $this->_view->renderingMain('index',true);
->>>>>>> 9fd03d5874c700cbe0ded13d1af78fe877eda957
     }
 }
 

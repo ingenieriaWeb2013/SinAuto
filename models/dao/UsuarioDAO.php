@@ -15,7 +15,8 @@ class UsuarioDAO extends Model{
     
     private static $instance=null;
 
-    private function UsuarioDAO(){    
+    private function UsuarioDAO(){ 
+        parent::Model();
     }
     
     public static function getInstance(){//Singleton pattern

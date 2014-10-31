@@ -8,8 +8,8 @@
 						<input type="password" placeholder="Contraseña" name="pass">
 						<input type="password" placeholder="Confirma tu contraseña" name="passagain">
 						<input type="text" placeholder="Nombre" name="name" class="bigger_margin">
-						<p class="smaller_margin"><label for="newsletter" class="custom_checkbox"><input type="checkbox" name="newsletter" id="newsletter"> Receive newsletter about updates and promotions.</label></p>
-						<p><label for="terms" class="custom_checkbox"><input type="checkbox" name="terms" id="terms">I agree to your <a href="#">terms of use</a> and <a href="#">privacy policy</a>.</label></p>
+						<p class="smaller_margin"><label for="newsletter" class="custom_checkbox"><input type="checkbox" name="newsletter" id="newsletter"> Quiero recibir actualizaiones y promociones.</label></p>
+						<p><label for="terms" class="custom_checkbox"><input type="checkbox" name="terms" id="terms">Acepto los <a href="#">terminos y condiciones</a> y tambien las <a href="#">politicas de provacidad</a>.</label></p>
 						<p class="centered_content"><a class="button submit red">Registrarme</a></p>
 					</form>
 				</div>
@@ -22,7 +22,7 @@
 					<form action="login/ingresar">
 						<input type="text" placeholder="Correo" name="email">
 						<input type="password" placeholder="Contraseña" name="pass">
-						<label for="remember_me" class="custom_checkbox remember_me"><input type="checkbox" name="remember_me" id="remember_me">Remember me</label>
+						<label for="remember_me" class="custom_checkbox remember_me"><input type="checkbox" name="remember_me" id="remember_me">Recordarme</label>
 						<a class="button submit red right">Entrar</a>
 						<a href="#" class="forgotten_pass right">¿Olvidaste tu contraseña?</a>
 					</form>
@@ -47,8 +47,8 @@
 							<p>
 								<label for="type" class="dropdown_label">Tipo</label>
 								<select name="tipo" id="tipo" class="custom_select">
-                                                                    <?php foreach ($this->objTipos  as $tipo) { 
-                                                                              echo '<option value="'.$tipo->getIdTipo().'">'.$tipo->getNombre().'</option>';
+                                                                    <?php foreach ($this->objTipos  as $obj) { 
+                                                                              echo '<option value="'.$obj->getIdTipo().'">'.$obj->getNombre().'</option>';
                                                                      } ?>
 								</select>
 							</p>
@@ -61,11 +61,11 @@
                        
 						<div class="half right">
 							<p>
-								<label for="category" class="dropdown_label">Categoria</label>
-								<select name="category" id="category" class="custom_select">
-									<option value="">Sedan</option>
-									<option value="">Hedgeback</option>
-									<option value="">Pick-up</option>
+								<label for="category" class="dropdown_label">Carroceria</label>
+								<select name="carroceria" id="carroceria" class="custom_select">
+                                                                    <?php   foreach ($this->objCarrocerias  as $obj) { 
+                                                                           echo '<option value="'.$obj->getIdCarroceria().'">'.$obj->getNombre().'</option>';
+                                                                       } ?>
 								</select>
 							</p>
 						</div>
@@ -76,89 +76,78 @@
 							<p>
 								<label for="marca" class="dropdown_label">Marca</label>
 								<select name="marca" id="type" class="custom_select">
-                                                                    <?php   foreach ($this->objMarcas  as $marca) { 
-                                                                                echo '<option value="'.$marca->getIdMarca().'">'.$marca->getNombre().'</option>';
+                                                                    <?php   foreach ($this->objMarcas  as $obj) { 
+                                                                                echo '<option value="'.$obj->getIdMarca().'">'.$obj->getNombre().'</option>';
                                                                             } ?>
 								</select>
 							</p>
-		
+                                                        <p>
+								<label for="category" class="dropdown_label">Modelo</label>
+								<input type="text" placeholder="ej. Swift" name="Modelo">
+							</p>
+                                                        <p>
+								<label for="brand" class="dropdown_label">Patente</label>
+								<input type="text" placeholder="ej. AB1234" name="Modelo">
+							</p>
+                                                        <p>
+								<label for="brand" class="dropdown_label">Año</label>
+								<input type="text" placeholder="ej. 2007" name="Modelo">
+							</p>
 						</div>
                        
 						<div class="half right">
-							<p>
-								<label for="category" class="dropdown_label">Modelo</label>
-								<input type="text" placeholder="Modelo" name="Modelo">
+                                                        <p>
+								<label for="marca" class="dropdown_label">Año</label>
+								<select name="marca" id="type" class="custom_select">
+                                                                    <?php   foreach ($this->objMarcas  as $obj) { 
+                                                                                echo '<option value="'.$obj->getIdMarca().'">'.$obj->getNombre().'</option>';
+                                                                            } ?>
+								</select>
 							</p>
-						</div>
-                                                
+							<p>
+								<label for="category" class="dropdown_label">Version</label>
+								<input type="text" placeholder="ej. GL" name="Modelo">
+							</p>
+                                                        <p>
+								<label for="brand" class="dropdown_label">Cilindrada</label>
+								<input type="text" placeholder="ej. 800" name="Modelo">
+							</p>
+                                                        <p>
+								<label for="brand" class="dropdown_label">Kilometraje</label>
+								<input type="text" placeholder="ej. 10000" name="Modelo">
+							</p>
+						</div>                                              
 					</div>
+                                       
 					<div class="box-content clearfix">
 						<div class="half left">
 							<p>
-								<label for="location" class="dropdown_label">Location</label>
+								<label for="location" class="dropdown_label">Combustible</label>
 								<select name="location" id="location" class="custom_select">
-									<option value="">New York</option>
-									<option value="">Chicago</option>
-									<option value="">Washington</option>
-									<option value="">Boston</option>
+									<option value="">Bencina</option>
+									<option value="">Disel</option>
+
 								</select>
 							</p>
+						
 							<p>
-								<label for="brand" class="dropdown_label">Brand</label>
-								<select name="brand" id="brand" class="custom_select">
-									<option value="">All</option>
-									<option value="">BMW</option>
-									<option value="">Mercedes</option>
-									<option value="">Audi</option>
-									<option value="">Ferrari</option>
-								</select>
-							</p>
-							<p>
-								<label for="model" class="dropdown_label">Model</label>
+                                                            <label for="model" class="dropdown_label">Direcci&oacute;n</label>
 								<select name="model" id="model" class="custom_select">
-									<option value="">All</option>
-									<option value="">C</option>
-									<option value="">E</option>
-									<option value="">S</option>
-									<option value="">CLK</option>
-									<option value="">SLK</option>
+									<option value="">Mecanica</option>
+									<option value="">Hidraulica</option>
+									<option value="">Asistida</option>
+			
 								</select>
 							</p>
-							<p>
-								<label for="price_from" class="dropdown_label">Price range</label>
-								<select name="price_from" id="price_from" class="custom_select range">
-									<option value="">$5.000</option>
-									<option value="">$10.000</option>
-									<option value="">$15.000</option>
-									<option value="">$20.000</option>
-								</select>
-								<span class="range_delimiter">-</span> 
-								<select name="price_to" id="price_to" class="custom_select range">
-									<option value="">$5.000</option>
-									<option value="">$10.000</option>
-									<option value="">$15.000</option>
-									<option value="">$20.000</option>
-								</select>
-							</p>
-							<p>
-								<label for="exterior_color" class="dropdown_label">Exterior color</label>
-								<select name="exterior_color" id="exterior_color" class="custom_select">
-									<option value="">Black</option>
-									<option value="">White</option>
-									<option value="">Silver</option>
-									<option value="">Red</option>
-									<option value="">Blue</option>
-								</select>
-							</p>
-							<p>
-								<label for="interior_color" class="dropdown_label">Interior color</label>
-								<select name="interior_color" id="interior_color" class="custom_select">
-									<option value="">Dark grey</option>
-									<option value="">Dark brown</option>
-									<option value="">Light gray</option>
-								</select>
-							</p>
-						</div>
+                                                        <p><label for="negotiable" class="custom_checkbox"><input type="checkbox" name="negotiable" id="negotiable">AirBag</label></p>
+                                                        <p><label for="negotiable" class="custom_checkbox"><input type="checkbox" name="negotiable" id="negotiable">4 WD</label></p>
+                                                        <p><label for="negotiable" class="custom_checkbox"><input type="checkbox" name="negotiable" id="negotiable">Frenos ABS</label></p>
+                                                        <p><label for="negotiable" class="custom_checkbox"><input type="checkbox" name="negotiable" id="negotiable">Aire acondicionado</label></p>
+                                                        <p><label for="negotiable" class="custom_checkbox"><input type="checkbox" name="negotiable" id="negotiable">Espejos electricos</label></p>
+                                                        <p><label for="negotiable" class="custom_checkbox"><input type="checkbox" name="negotiable" id="negotiable">Alzavidrios electricos</label></p>
+                                                        <p><label for="negotiable" class="custom_checkbox"><input type="checkbox" name="negotiable" id="negotiable">Radio</label></p>
+                                                        
+                                                </div>
 						<div class="half right">
 							<p>
 								<label for="transmision" class="dropdown_label">Transmision</label>
@@ -168,97 +157,50 @@
 									<option value="">Automatic</option>
 								</select>
 							</p>
+						
 							<p>
-								<label for="engine_from" class="dropdown_label">Engine range</label>
-								<select name="engine_from" id="engine_from" class="custom_select range">
-									<option value="">0,8</option>
-									<option value="">1,2</option>
-									<option value="">1,6</option>
-									<option value="">1,9</option>
-									<option value="">2,0</option>
-									<option value="">2,5</option>
-									<option value="">3,0</option>
-									<option value="">4,0</option>
-									<option value="">5,0</option>
-									<option value="">6,0</option>
-								</select>
-								<span class="range_delimiter">-</span>
-								<select name="engine_to" id="engine_to" class="custom_select range">
-									<option value="">0,8</option>
-									<option value="">1,2</option>
-									<option value="">1,6</option>
-									<option value="">1,9</option>
-									<option value="">2,0</option>
-									<option value="">2,5</option>
-									<option value="">3,0</option>
-									<option value="">4,0</option>
-									<option value="">5,0</option>
-									<option value="">6,0</option>
-								</select>
-							</p>
-							<p>
-								<label for="fuel" class="dropdown_label">Fuel</label>
+								<label for="fuel" class="dropdown_label">Traccion</label>
 								<select name="fuel" id="fuel" class="custom_select">
-									<option value="">Gasoline</option>
-									<option value="">Diesel</option>
-									<option value="">LPG</option>
-								</select>
-							</p>
-							<p>
-								<label for="drive" class="dropdown_label">Drive</label>
-								<select name="drive" id="drive" class="custom_select">
-									<option value="">Front-wheel</option>
-									<option value="">Rear-wheel</option>
+									<option value="">Delantera</option>
+									<option value="">Trasera</option>
 									<option value="">4x4</option>
 								</select>
 							</p>
-							<p>
-								<label for="milage_from" class="dropdown_label">Mileage</label>
-								<select name="milage_from" id="milage_from" class="custom_select range">
-									<option value="">5.000</option>
-									<option value="">10.000</option>
-									<option value="">15.000</option>
-									<option value="">20.000</option>
-									<option value="">40.000</option>
-									<option value="">60.000</option>
-								</select>
-								<span class="range_delimiter">-</span>
-								<select name="milage_to" id="milage_to" class="custom_select range">
-									<option value="">5.000</option>
-									<option value="">10.000</option>
-									<option value="">15.000</option>
-									<option value="">20.000</option>
-									<option value="">40.000</option>
-									<option value="">60.000</option>
-								</select>
-							</p>
+                                                        <p><label for="negotiable" class="custom_checkbox"><input type="checkbox" name="negotiable" id="negotiable">Catalitico</label></p>
+                                                        <p><label for="negotiable" class="custom_checkbox"><input type="checkbox" name="negotiable" id="negotiable">LLantas</label></p>
+                                                        <p><label for="negotiable" class="custom_checkbox"><input type="checkbox" name="negotiable" id="negotiable">Alarma</label></p>
+                                                        <p><label for="negotiable" class="custom_checkbox"><input type="checkbox" name="negotiable" id="negotiable">Price is negotiable</label></p>
+							<p><label for="negotiable" class="custom_checkbox"><input type="checkbox" name="negotiable" id="negotiable">Cierre centralizado</label></p>
+                                                        <p><label for="negotiable" class="custom_checkbox"><input type="checkbox" name="negotiable" id="negotiable">Catalitico</label></p>
 						</div>
 					</div>
 				</div>
 				<div class="box">
-					<h3>Vehicle description</h3>
+					<h3>Descripcion</h3>
 					<div class="box-content">
 						<textarea name="description" id="description" placeholder="Enter your description"></textarea>
 					</div>
 				</div>
-				<a class="button submit green">Create Listing</a>
+				<a class="button submit green">Publicar</a>
 			</div>
 			<div class="grid_4">
 				<div class="box">
-					<h3>Add Photos</h3>
+					<h3>Agregar fotos</h3>
 					<div class="box-content">
 						<p class="centered_content">
-							<a href="#" class="button red">Upload photos</a>
+							<a href="#" class="button red">Subir foto</a>
 						</p>
 					</div>
 				</div>
 	
 				<div class="box">
-					<h3>Sell options</h3>
+					<h3>Opciones de venta</h3>
 					<div class="box-content">
-						<p><label for="negotiable" class="custom_checkbox"><input type="checkbox" name="negotiable" id="negotiable">Price is negotiable</label></p>
-						<p><label for="exchange" class="custom_checkbox"><input type="checkbox" name="exchange" id="exchange">Possible exchange</label></p>
-						<a href="#">Learn more about rating system</a>
+                                                <label for="brand" class="dropdown_label">Precio</label>
+                                                <input type="text" placeholder="ej. 10000" name="Modelo">
+						<p><label for="negotiable" class="custom_checkbox"><input type="checkbox" name="negotiable" id="negotiable">Precio negociable</label></p>
+						<p><label for="exchange" class="custom_checkbox"><input type="checkbox" name="exchange" id="exchange">Posible permuta</label></p>
+			
 					</div>
 				</div>
 			</div>

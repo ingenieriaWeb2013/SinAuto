@@ -15,7 +15,7 @@ class TipoDAO extends Model{
     
     private static $instance=null;
 
-    private function TipoDAO(){ 
+    public function TipoDAO(){ 
         parent::Model();
     }
     
