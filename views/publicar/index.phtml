@@ -41,26 +41,27 @@
 		<form action="#">
 			<div class="grid_8 bigger_margin">
 				<div class="box clearfix">
-					<h3>Vehicle info</h3>
+                                    <h3>Informaci&oacute;n del vehiculo</h3>
 					<div class="box-content clearfix bordered_under">
 						<div class="half left">
 							<p>
-								<label for="type" class="dropdown_label">Type</label>
-								<select name="type" id="type" class="custom_select">
-									<option value="">Cars</option>
-									<option value="">Motorcycles</option>
-									<option value="">Trucks</option>
+								<label for="type" class="dropdown_label">Tipo</label>
+								<select name="tipo" id="tipo" class="custom_select">
+                                                                    <?php foreach ($this->objTipos  as $tipo) { 
+                                                                              echo '<option value="'.$tipo->getIdTipo().'">'.$tipo->getNombre().'</option>';
+                                                                     } ?>
 								</select>
 							</p>
 							<p class="smaller_margin">
-								<label for="condition_new" class="custom_radio"><input type="radio" name="condition" id="condition_new" value="new">New items</label>
-								<label for="condition_used" class="custom_radio"><input type="radio" name="condition" id="condition_used" value="used">Used items</label>
-							</p>
+								<label for="condition_new" class="custom_radio"><input type="radio" name="condition" id="condition_new" value="new">Nuevo</label>
+								<label for="condition_used" class="custom_radio"><input type="radio" name="condition" id="condition_used" value="used">Usado</label>
+							
+                                                        </p>
 						</div>
                        
 						<div class="half right">
 							<p>
-								<label for="category" class="dropdown_label">Category</label>
+								<label for="category" class="dropdown_label">Categoria</label>
 								<select name="category" id="category" class="custom_select">
 									<option value="">Sedan</option>
 									<option value="">Hedgeback</option>
@@ -85,12 +86,8 @@
                        
 						<div class="half right">
 							<p>
-								<label for="category" class="dropdown_label">Category</label>
-								<select name="category" id="category" class="custom_select">
-									<option value="">Sedan</option>
-									<option value="">Hedgeback</option>
-									<option value="">Pick-up</option>
-								</select>
+								<label for="category" class="dropdown_label">Modelo</label>
+								<input type="text" placeholder="Modelo" name="Modelo">
 							</p>
 						</div>
                                                 
