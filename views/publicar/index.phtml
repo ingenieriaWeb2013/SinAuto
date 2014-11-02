@@ -38,8 +38,9 @@
 	</div>
 
 	<div class="container_12 clearfix" id="add_new_item_info">
-		<form action="#">
+            
 			<div class="grid_8 bigger_margin">
+                            <form action="publicar/subirImagen" id="as" enctype="multipart/form-data">
 				<div class="box clearfix">
                                     <h3>Informaci&oacute;n del vehiculo</h3>
 					<div class="box-content clearfix bordered_under">
@@ -181,19 +182,7 @@
 						<textarea name="description" id="description" placeholder="Enter your description"></textarea>
 					</div>
 				</div>
-				<a class="button submit green">Publicar</a>
-			</div>
-			<div class="grid_4">
-				<div class="box">
-					<h3>Agregar fotos</h3>
-					<div class="box-content">
-						<p class="centered_content">
-							<a href="#" class="button red">Subir foto</a>
-						</p>
-					</div>
-				</div>
-	
-				<div class="box">
+                                <div class="box">
 					<h3>Opciones de venta</h3>
 					<div class="box-content">
                                                 <label for="brand" class="dropdown_label">Precio</label>
@@ -203,6 +192,98 @@
 			
 					</div>
 				</div>
+				<a class="button submit green">Publicar</a>
+                               </form> 
 			</div>
-		</form>
+			<div class="grid_4">
+				<div class="box">
+					<h3>Agregar fotos</h3>
+      
+					<div class="box-content">
+						<p>
+                                                    <form class="centered_content" action="publicar/subirImagen" enctype="multipart/form-data" id="subirImagen">
+                                                        <a class="button red" style="width: 157px;height: 55px;overflow: hidden;">
+                                                            
+                                                            Agregar Imagen
+                                                            
+                                                            <input name="imagen" type="file" id="imagen" class="button red" style="margin-left: -16px;margin-top:-37px;display: block !important;width: 157px !important;height: 55px !important; opacity: 0 !important;" />
+                                                        </a>
+                                                 
+                                                    </form>
+						</p>
+                                                <div id="imagenbox">
+                                                <p>
+                                                    <div class="overlayed" id="imagen_box">
+                                                      
+                                                    </div>
+                                                </p>
+                                                </div>
+					</div>
+                                        
+				</div>
+	
+				
+			</div>
+		
 	</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        var cont = "0";
+        $('#imagen').change(function()
+        {
+            cont++;
+            var formData = new FormData($("#subirImagen")[0]); 
+            
+            $.ajax({
+                url: 'publicar/subirImagen',  
+                type: 'POST',
+                // Form data
+                //datos del formulario
+                data: formData,
+                //necesario para subir archivos via ajax
+                cache: false,
+                contentType: false,
+                processData: false,
+                //mientras enviamos el archivo
+                beforeSend: function(){
+                    $("#imagen_box").append("<p><img id='cont"+cont+"' src='http://localhost/sinauto/public/img/smart.jpg'></p>");      
+                },
+                //una vez finalizado correctamente
+                success: function(data){
+                    if (data=="false") {
+                        alert("error");
+                        $("#cont"+cont+"").remove();
+                    }else{
+                        $("#cont"+cont+"").remove();
+                        $("#imagen_box").append("<p><img id='cont"+cont+"' src='"+data+"'></p>");
+                    }
+     
+                },
+                //si ha ocurrido un error
+                error: function(){
+                    alert("error");
+                    $("#cont"+cont+"").remove();
+                }
+            });
+        });
+    });
+
+//como la utilizamos demasiadas veces, creamos una función para 
+//evitar repetición de código
+//comprobamos si el archivo a subir es una imagen
+//para visualizarla una vez haya subido
+function isImage(extension)
+{
+    switch(extension.toLowerCase()) 
+    {
+        case 'jpg': case 'gif': case 'png': case 'jpeg':
+            return true;
+        break;
+        default:
+            return false;
+        break;
+    }
+}
+</script>
