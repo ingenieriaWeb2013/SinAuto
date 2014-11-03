@@ -21,6 +21,7 @@
 		<link rel="stylesheet" type="text/css" media="all" id="rs-settings-css" href="<?php echo $_layoutParams['ruta_css']; ?>revslider.css">
 		<link rel="stylesheet" type="text/css" media="all" id="main_css" href="<?php echo $_layoutParams['ruta_css']; ?>style.css">
 		<link rel="stylesheet" type="text/css" media="all" id="responsive_css" href="<?php echo $_layoutParams['ruta_css']; ?>responsive.css">
+                <script src="<?php echo $_layoutParams['ruta_js']; ?>jquery-1.9.1.min.js"></script>
 </head>
 <body>
 
@@ -65,7 +66,7 @@
                                         </ul>
 				</nav>
 				<div id="add_listing" class="grid_3">
-					<a href="publicar" class="button green big wide">Vente tu auto</a>
+					<a href="publicar" class="button green big wide">Publicar</a>
 				</div>
 			</div>
 		</div>

@@ -1,5 +1,6 @@
 $ cat .gitignore	
 application/Config.php
-script/.DS_Store
 nbproject/
+public/foto/*
+**/.DS_Store 
 *~	

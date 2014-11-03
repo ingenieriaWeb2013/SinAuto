@@ -63,8 +63,8 @@
 		</div>
     </footer>
 
-	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-	<script src="<?php echo $_layoutParams['ruta_js']; ?>jquery-1.9.1.min.js"></script>
+	<!--<script src="http://maps.google.com/maps/api/js?sensor=false"></script>-->
+
 	<script src="<?php echo $_layoutParams['ruta_js']; ?>superfish.js"></script>
 	<script src='<?php echo $_layoutParams['ruta_js']; ?>jquery.themepunch.plugins.min.js'></script>
 	<script src='<?php echo $_layoutParams['ruta_js']; ?>jquery.themepunch.revolution.min.js'></script>

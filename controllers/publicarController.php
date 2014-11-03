@@ -12,15 +12,38 @@ class publicarController extends Controller
     
     public function publicarController() {
         parent::Controller();
-        $this->_marca= $this->loadModel('marca'); 
     }
     
     public function index()
     {
-        
-        //$this->_marca->getMarcas();
-        $this->_view->objMarcas = $this->_marca->getMarcas();
+        $this->_marca   = $this->loadModel('Marca');
+        $this->_tipo    = $this->loadModel('Tipo');
+        $this->_carro    = $this->loadModel('Carroceria');
+       
+        $this->_view->objMarcas         = $this->_marca->getMarcas();
+        $this->_view->objTipos          = $this->_tipo->getTipos();
+        $this->_view->objCarrocerias    = $this->_carro->getCarrocerias();
         $this->_view->renderingMain('index',true);
+    }
+    
+    
+    public function subirImagen(){
+        if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+            
+            
+            
+            $file = $_FILES['imagen']['name'];
+    
+            $ruta = ROOT."public".DS."foto".DS."1.jpg";
+
+            if ($file && move_uploaded_file($_FILES['imagen']['tmp_name'],$ruta)){
+                sleep(3);
+                echo BASE_URL."public/foto/1.jpg";
+            }
+        }else{
+            echo "false";   
+        }
+        
     }
 }
 
