@@ -1,5 +1,6 @@
 $ cat .gitignore	
 application/Config.php
 nbproject/
-.DS_Store 
+public/foto/*
+**/.DS_Store 
 *~	
