@@ -38,11 +38,13 @@ class publicarController extends Controller
 
             $file = $_FILES['imagen']['name'];
             
-            $ruta = $dir."1.jpg";
+            $nombre = uniqid();
+
+            $ruta = $dir.$nombre .".jpg";
 
             if ($file && move_uploaded_file($_FILES['imagen']['tmp_name'],$ruta)){
-                sleep(3);
-                echo BASE_URL."public/foto/1.jpg";
+                sleep(0);
+                echo BASE_URL."public/foto/".$nombre .".jpg";
             }
         }else{
             echo "false";   
