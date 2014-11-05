@@ -30,15 +30,21 @@ class publicarController extends Controller
     public function subirImagen(){
         if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
             
+            $dir =  ROOT."public".DS."foto".DS;
             
-            
+            if(!file_exists($dir)){
+                mkdir ($dir,0755);
+            } 
+
             $file = $_FILES['imagen']['name'];
-    
-            $ruta = ROOT."public".DS."foto".DS."1.jpg";
+            
+            $nombre = uniqid();
+
+            $ruta = $dir.$nombre .".jpg";
 
             if ($file && move_uploaded_file($_FILES['imagen']['tmp_name'],$ruta)){
-                sleep(3);
-                echo BASE_URL."public/foto/1.jpg";
+                sleep(0);
+                echo BASE_URL."public/foto/".$nombre .".jpg";
             }
         }else{
             echo "false";   

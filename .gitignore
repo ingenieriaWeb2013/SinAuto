@@ -3,4 +3,5 @@ application/Config.php
 nbproject/
 public/foto/*
 **/.DS_Store 
+.DS_Store 
 *~	
