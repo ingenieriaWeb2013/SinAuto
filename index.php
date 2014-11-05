@@ -22,6 +22,7 @@ header('Content-Type: text/html; charset=' . CHARSET);
 
 try
 {
+    require_once ROOT     . 'vendor/autoload.php';
     require_once APP_PATH . 'Config.php';
     require_once APP_PATH . 'Request.php';
     require_once APP_PATH . 'Bootstrap.php';
@@ -32,7 +33,7 @@ try
     require_once APP_PATH . 'Database.php';
     require_once APP_PATH . 'Session.php';
     require_once APP_PATH . 'Funciones.php';
-
+        
     Session::init();
 
     Bootstrap::run(new Request);

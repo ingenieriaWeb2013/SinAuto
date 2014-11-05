@@ -1,5 +1,6 @@
 <?php
-
+use Facebook\FacebookSession; 
+use Facebook\FacebookRedirectLoginHelper;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,7 +18,7 @@ class loginController extends Controller{
     
     public function __construct() {
         parent::__construct();
-        $this->_login= $this->loadModel('usuario'); // para cargar el modelo para todo el controller
+        //$this->_login= $this->loadModel('usuario'); // para cargar el modelo para todo el controller
     }
     
     
@@ -134,5 +135,27 @@ class loginController extends Controller{
             
             $this->redireccionar(); //Ingrese un usuario o Pass
         }
+    }
+
+    public function ingresarFacebook(){
+        
+
+        FacebookSession::setDefaultApplication('1511263092454791', 'dab392c0a148e8a5ae34ecee2c3235be');
+
+        $helper = new FacebookRedirectLoginHelper(BASE_URL);
+        $loginUrl = $helper->getLoginUrl();
+        
+        header('Location:'.$loginUrl);
+    }
+
+    public function logearFacebook(){
+        
+
+        FacebookSession::setDefaultApplication('1511263092454791', 'dab392c0a148e8a5ae34ecee2c3235be');
+
+        $helper = new FacebookRedirectLoginHelper(BASE_URL);
+        $loginUrl = $helper->getLoginUrl();
+
+        header('Location:'.$loginUrl);
     }
 }
