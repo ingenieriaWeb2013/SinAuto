@@ -1,6 +1,8 @@
 <?php
 use Facebook\FacebookSession; 
 use Facebook\FacebookRedirectLoginHelper;
+use Facebook\FacebookRequest;
+use Facebook\GraphUser;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -138,24 +140,32 @@ class loginController extends Controller{
     }
 
     public function ingresarFacebook(){
-        
-
-        FacebookSession::setDefaultApplication('1511263092454791', 'dab392c0a148e8a5ae34ecee2c3235be');
-
-        $helper = new FacebookRedirectLoginHelper(BASE_URL);
-        $loginUrl = $helper->getLoginUrl();
-        
+        FacebookSession::setDefaultApplication('717731938295412', '0165bfb89d46d90dd2085f5a53d076f4');
+        $helper = new FacebookRedirectLoginHelper(BASE_URL."login/logearFacebook");
+        $loginUrl = $helper->getLoginUrl(array('scope' => 'email'));   
         header('Location:'.$loginUrl);
     }
 
     public function logearFacebook(){
         
-
-        FacebookSession::setDefaultApplication('1511263092454791', 'dab392c0a148e8a5ae34ecee2c3235be');
-
-        $helper = new FacebookRedirectLoginHelper(BASE_URL);
-        $loginUrl = $helper->getLoginUrl();
-
-        header('Location:'.$loginUrl);
+        FacebookSession::setDefaultApplication('717731938295412', '0165bfb89d46d90dd2085f5a53d076f4');
+        $helper = new FacebookRedirectLoginHelper(BASE_URL."login/logearFacebook");
+        
+        try {
+            $session = $helper->getSessionFromRedirect();
+            if ($session) {
+                $user_profile = (new FacebookRequest($session, 'GET', '/me'))->execute()->getGraphObject(GraphUser::className());
+                echo $user_profile->getEmail();
+            }
+            exit;
+        } catch(FacebookRequestException $ex) {
+          echo $ex;
+          exit;
+        } catch(\Exception $ex) {
+          echo $ex;
+          exit;
+        }
+       
+        
     }
 }
