@@ -15,7 +15,7 @@ class UsuarioDAO extends Model{
     
     private static $instance=null;
 
-    private function UsuarioDAO(){ 
+    public function UsuarioDAO(){ 
         parent::Model();
     }
     

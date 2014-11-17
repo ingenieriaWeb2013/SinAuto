@@ -20,14 +20,16 @@ class publicarController extends Controller
         $this->_tipo    = $this->loadModel('Tipo');
         $this->_carro   = $this->loadModel('Carroceria');
         $this->_vehi    = $this->loadModel('Vehiculo');
+        $this->_usuario = $this->loadModel('Usuario');
        
         $this->_view->objMarcas         = $this->_marca->getMarcas();
         $this->_view->objTipos          = $this->_tipo->getTipos();
         $this->_view->objCarrocerias    = $this->_carro->getCarrocerias();
-        $this->_view->ultimoVehiculoPublicado = $this->_vehi->getUltimoVehiculoPublicadoPorUsuario();
+        $this->_view->objInfoVehiculo   = $this->_vehi->getUltimoVehiculoPublicadoPorUsuario();
         
-        if($this->_view->ultimoVehiculoPublicado != 0 ){
-            
+        if($this->_view->objInfoVehiculo == 0 ){// tiene una publicacion a medias
+            $this->_view->objInfoVehiculo = $this->_vehi->getNuevoVehiculoUsuario();
+            echo var_dump($this->_view->objInfoVehiculo);
         }
         
         $this->_view->renderingMain('index',true);

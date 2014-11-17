@@ -302,7 +302,7 @@ class Vehiculo {
         $this->espejos = $espejos;
     }
 
-    function Vehiculo() {
+    public function Vehiculo() {
         
     }
 
