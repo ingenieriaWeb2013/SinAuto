@@ -12,7 +12,7 @@
  */
 class Usuario {
 //put your code here
-    private $id_usuario;
+    private $idUsuario;
     private $nombre;
     private $email;
     private $facebook;
@@ -34,12 +34,12 @@ class Usuario {
 
         
     
-    public function getId_usuario() {
-        return $this->id_usuario;
+    public function getIdUsuario() {
+        return $this->idUsuario;
     }
 
-    public function setId_usuario($id_usuario) {
-        $this->id_usuario = $id_usuario;
+    public function setIdUsuario($idUsuario) {
+        $this->idUsuario = $idUsuario;
     }
 
     public function getEmail() {

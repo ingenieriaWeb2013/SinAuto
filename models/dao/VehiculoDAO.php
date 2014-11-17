@@ -46,7 +46,29 @@ class VehiculoDAO extends Model{
         }
     }
     
-
+    public function getUltimoVehiculoPublicadoPorUsuario($user){
+        
+        $vdb= $this->_db->consulta('SELECT * FROM vehiculo WHERE id_user="'.$user->getIdUsuario().'" ');
+        
+        if($this->_db->numRows($vdb)>0)
+        {
+            $vehiculos_array = $this->_db->fetchAll($vdb);
+            foreach ($vehiculos_array as $vehi) {
+                $vehi_obj = new Vehiculo();
+                $vehi_obj.setIdVehiculo($vehi['id_auto']);
+                $vehi_obj.setUsuario(UsuarioDAO::getInstance().getUsuarioPorId($vehi['id_user']));
+                $vehi_obj.setConsecionaria(ConsecionariaDAO::getInstance().getConsecionariaPorId($vehi['id_con']));
+                $vehi_obj.setFechaPublica($vehi['fecha_publica']);
+                $vehi_obj.setPatente($vehi['patente']);
+                $vehi_obj.setCarroceria(CarroceriaDAO::getInstance().getCarroceriaPorId($vehi['id_carro']));
+                
+            }
+        }
+        else
+        {
+            return 0;
+        }
+    }
 
 }
 

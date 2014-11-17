@@ -252,18 +252,20 @@
                 },
                 //una vez finalizado correctamente
                 success: function(data){
-                    if (data=="false") {
-                        alert("error");
+                    var objJSON = jQuery.parseJSON(data);
+
+                    
+                    if (objJSON.estado=="error") {
+                        alert(objJSON.error);
                         $("#cont"+cont+"").remove();
                     }else{
                         $("#cont"+cont+"").remove();
-                        $("#imagen_box").append("<p><img id='cont"+cont+"' src='"+data+"'></p>");
+                        $("#imagen_box").append("<p><img id='cont"+cont+"' src='"+objJSON.url+"'></p>");
                     }
-     
                 },
                 //si ha ocurrido un error
                 error: function(){
-                    alert("error");
+                    alert("Ha ocurrido un error, intentelo nuevamente.");
                     $("#cont"+cont+"").remove();
                 }
             });
