@@ -20,7 +20,7 @@ class Database
         return self::$instance;
     }
     
-    private function Database() {
+    private function __construct() {
           $this->_conexion= new mysqli (DB_HOST, DB_USER, DB_PASS); 
           
         if(!$this->_conexion->connect_errno)

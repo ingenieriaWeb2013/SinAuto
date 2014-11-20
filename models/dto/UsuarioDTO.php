@@ -11,7 +11,7 @@
  * @author Felipe
  */
 class Usuario {
-//put your code here
+    //put your code here
     private $id_usuario;
     private $nombre;
     private $email;
@@ -21,9 +21,21 @@ class Usuario {
     private $rut;
     private $pass;
     private $comuna;
+    private $_estado;
     
-    public function Usuario(){}
     
+    public function getEstado() {
+        return $this->_estado;
+    }
+    public function setEstado($st) {
+        $this->_estado=$st;
+    }
+
+
+
+
+
+
     public function getNombre() {
         return $this->nombre;
     }

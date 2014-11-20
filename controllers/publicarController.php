@@ -10,8 +10,8 @@ class publicarController extends Controller
 {
     //private $_marca;
     
-    public function publicarController() {
-        parent::Controller();
+    public function __construct() {
+        parent::__construct();
     }
     
     public function index()
@@ -23,14 +23,14 @@ class publicarController extends Controller
         $this->_view->objMarcas         = $this->_marca->getMarcas();
         $this->_view->objTipos          = $this->_tipo->getTipos();
         $this->_view->objCarrocerias    = $this->_carro->getCarrocerias();
-        $this->_view->renderingMain('index',true);
+        $this->_view->renderingMain('index', true);
     }
     
     
     public function subirImagen(){
         if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
             
-            $dir =  ROOT."public".DS."foto".DS;
+            $dir =  ROOT . "public" . DS . "foto" . DS;
             
             if(!file_exists($dir)){
                 mkdir ($dir,0755);
@@ -40,11 +40,11 @@ class publicarController extends Controller
             
             $nombre = uniqid();
 
-            $ruta = $dir.$nombre .".jpg";
+            $ruta = $dir . $nombre . ".jpg";
 
             if ($file && move_uploaded_file($_FILES['imagen']['tmp_name'],$ruta)){
                 sleep(0);
-                echo BASE_URL."public/foto/".$nombre .".jpg";
+                echo BASE_URL . "public/foto/" . $nombre . ".jpg";
             }
         }else{
             echo "false";   
