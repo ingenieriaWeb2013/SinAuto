@@ -32,23 +32,45 @@
 					<li><a href="index.html">Mi Cuenta</a></li>
 					<li><a href="about.html">Vender</a></li>
 					<li><a href="about.html">Configuraci&oacute;n</a></li>
+                                        <li><a href="<?php echo BASE_URL; ?>registrar">Registrarme</a></li>
 				</ul>
 				<div id="top_toolbar_user_lng">
-					<a href="#login_form" class="user show_login_form">
-						Ingresar
-					</a>
+                                    
+                                    <?php if(Session::get('sess_autenticado'))
+                                    { ?>
+                                    <div>
+                                        <a id="language_button" class="language"><!-- <img src="images/en.png" alt="English">-->
+                                            <?php echo Session::get('sess_nombreUser'); ?>
+                                        </a>
+                                        <ul id="language_selection">
+                                            <li>
+                                                <a href="<?php echo BASE_URL; ?>usuarios/perfil">Perfil</a>
+                                            </li>
+                                            <li>
+                                                <a href="<?php echo BASE_URL; ?>usuarios/config">Config</a>
+                                            </li>
+                                            <li>
+                                                <a href="<?php echo BASE_URL; ?>usuarios/perfil/salir">Salir</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <?php } else { ?>
+                                    <a href="#login_form" class="user show_login_form">
+                                            Ingresar
+                                    </a>
+                                    <?php } ?>
 				</div>
 				<div class="login_form_modal_container">
 					<div id="login_form" class="box">
 						<h3>Entrar a SinAuto</h3>
 						<div class="box-content clearfix">
-							<form action="login/ingresar">
-								<input type="text" placeholder="usuario@ejemplo.com" name="email">
-								<input type="password" placeholder="Contraseña" name="pass">
-								<label for="remember" class="custom_checkbox remember_me"><input type="checkbox" name="remember" id="remember">Recordarme</label>
-								<a class="button submit red right">Entrar</a>
-								<a href="#" class="forgotten_pass right">¿Olvido su contraseña?</a>
-							</form>
+                                                    <form method="post" action="<?php echo BASE_URL; ?>login/ingresar">
+                                                        <input type="text" placeholder="usuario@ejemplo.com" name="txtEmail">
+                                                        <input type="password" placeholder="Contrase&ntilde;a" name="txtPass">
+                                                        <label for="remember" class="custom_checkbox remember_me"><input type="checkbox" name="remember" id="remember">Recordarme</label>
+                                                        <a class="button submit red right">Entrar</a>
+                                                        <a href="#" class="forgotten_pass right">&iquest;Olvido su contrase&ntilde;a?</a>
+                                                    </form>
 						</div>
 					</div>
 				</div>

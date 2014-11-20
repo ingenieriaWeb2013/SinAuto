@@ -11,10 +11,27 @@ class Bootstrap
     
     public static function run(Request $peticion)
     {
+        $modulo = $peticion->getModulo();
         $controller= $peticion->getControlador() . 'Controller';
-        $rutaControlador= ROOT . 'controllers' . DS . $controller . '.php';
         $metodo= $peticion->getMetodo();
         $args= $peticion->getArgs();
+        
+        
+        if($modulo) {
+            $rutaModulo= ROOT . 'controllers' . DS . $modulo . 'Controller.php';
+            
+            if(is_readable($rutaModulo)) {
+                require_once $rutaModulo;
+                $rutaControlador= ROOT . 'modules' . DS . $modulo . DS . 'controllers' . DS . $controller . '.php';
+            } else {
+                throw new Exception('Error al cargar el modulo: ' . $rutaModulo);
+            }
+        } else {
+            $rutaControlador= ROOT . 'controllers' . DS . $controller . '.php';
+        }
+        
+        
+        //echo $rutaControlador; exit;
         
         if(is_readable($rutaControlador)) //verifica si el archivo existe y tambien es valido
         {

@@ -8,6 +8,66 @@
 
 class Funciones
 {
+    
+    public static function validarEmail($email)
+    { 
+        if (!preg_match("/^(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6}$/", $email)) 
+        {
+            $mail_correcto = 0;
+        }
+        else
+        {
+            $mail_correcto = 0; 
+            //compruebo unas cosas primeras 
+            if ((strlen($email) >= 6) && (substr_count($email,"@") == 1) && (substr($email,0,1) != "@") && (substr($email,strlen($email)-1,1) != "@"))
+            { 
+                if ((!strstr($email,"'")) && (!strstr($email,"\"")) && (!strstr($email,"\\")) && (!strstr($email,"\$")) && (!strstr($email," ")))
+                { 
+                    //miro si tiene caracter . 
+                    if (substr_count($email,".")>= 1)
+                    { 
+                        //obtengo la terminacion del dominio 
+                        $term_dom = substr(strrchr ($email, '.'),1); 
+                        
+                        //compruebo que la terminación del dominio sea correcta 
+                        if (strlen($term_dom)>1 && strlen($term_dom)<5 && (!strstr($term_dom,"@")) )
+                        { 
+                            //compruebo que lo de antes del dominio sea correcto 
+                            $antes_dom = substr($email,0,strlen($email) - strlen($term_dom) - 1); 
+                            $caracter_ult = substr($antes_dom,strlen($antes_dom)-1,1); 
+                            if ($caracter_ult != "@" && $caracter_ult != ".")
+                            {
+                                if (filter_var($email, FILTER_VALIDATE_EMAIL))
+                                {
+                                    $mail_correcto = 1;
+                                }
+                            } 
+                        } 
+                    } 
+                } 
+            }
+        }
+        
+        if ($mail_correcto) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    
+    
+    public static function parseRut($rut)
+    {
+        $newRut=false;
+        if($rut) {
+            $expRut= explode('-', $rut);
+            $newRut= number_format($expRut[0], 0, '', '.').'-'.$expRut[1];
+        }
+        
+        return $newRut;
+    }
+    
     public static function invertirFecha($fecha, $char, $newChar)
     {
         $datos = explode($char, $fecha);

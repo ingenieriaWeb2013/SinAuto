@@ -1,0 +1,35 @@
+<div class="container_12 clearfix content">
+    <div class="grid_6">
+        <div class="box">
+            <h3>Configuraci&oacute;n</h3>
+            <div class="box-content clearfix">
+                <form method="post" action="<?php echo BASE_URL; ?>registrar/registrarme">
+                    <input type="text" placeholder="Rut" name="txtRut" value="<?php echo Session::get('sess_login_Rut'); ?>">
+                    <input type="text" placeholder="Nombre" name="txtNombre" value="<?php echo Session::get('sess_login_Nombre'); ?>">
+                    <input type="text" placeholder="Correo" name="txtEmail" value="<?php echo Session::get('sess_login_Email'); ?>">
+                    <select name="tipo" id="tipo" class="custom_select">
+                        <option value="comuna">Pudahuel</option>
+                        <?php /*foreach ($this->objComunas  as $obj) { 
+                                  echo '<option value="'.$obj->getIdTipo().'">'.$obj->getNombre().'</option>';
+                         } */ ?>
+                    </select>
+                    <a class="button submit red right">Guardar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="grid_6">
+        <div class="box">
+            <h3>Contrase&ntilde;a</h3>
+            <div class="box-content clearfix">
+                <form action="login/ingresar">
+                    <input type="password" placeholder="Contrase&ntilde;a anterior" name="txtPassAnt">
+                    <input type="password" placeholder="Nueva Contrase&ntilde;a" name="txtNewPass">
+                    <input type="password" placeholder="Repetir Contrase&ntilde;a" name="txtNewPassR">
+                    <a class="button submit red right">Guardar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
