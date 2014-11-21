@@ -1,0 +1,53 @@
+<div class="container_12 clearfix content">
+    <div class="grid_6">
+        <div class="box">
+            <h3>Registrate</h3>
+            <div class="box-content">
+                <?php if(Session::get('sess_alerts')==1){ ?>
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Atenci&oacute;n</strong>, Para entrar a su cuenta, debe ingresar un Email y Password.
+                    </div>
+                <?php }else if(Session::get('sess_alerts')==2){ ?>
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Atenci&oacute;n</strong>, <?php echo Session::get('sess_alerts_msg'); ?>
+                    </div>
+                <?php } ?>
+                
+                <form method="post" action="<?php echo BASE_URL; ?>registrar/registrarme">
+                    <input type="text" placeholder="Nombre" name="txtNombre" value="<?php echo Session::get('sess_rNombre'); ?>">
+                    <input type="text" placeholder="Correo" name="txtEmail" value="<?php echo Session::get('sess_rEmail'); ?>">
+                    <input type="password" placeholder="Contrase&ntilde;a" name="txtPass">
+                    <input type="password" placeholder="Confirma tu contrase&ntilde;a" name="txtPassAgain" class="bigger_margin">
+                    <!-- <p class="smaller_margin"><label for="newsletter" class="custom_checkbox"><input type="checkbox" name="newsletter" id="newsletter"> Quiero recibir actualizaiones y promociones.</label></p> -->
+                    <p><label for="terms" class="custom_checkbox"><input type="checkbox" name="chkTerms" id="terms" >Acepto los <a href="#">terminos y condiciones</a> y tambien las <a href="#">politicas de provacidad</a>.</label></p>
+                    
+                    <p class="centered_content">
+                        <a class="button submit red">Registrarme</a>
+                        <!-- <input type="submit" class="button submit red" value="Registrarme"> -->
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="grid_6">
+        <div class="box">
+            <h3>Ingresa</h3>
+            <div class="box-content clearfix">
+                <form action="login/ingresar">
+                    <input type="text" placeholder="Correo" name="email">
+                    <input type="password" placeholder="Contrase&ntilde;a" name="pass">
+                    <label for="remember_me" class="custom_checkbox remember_me"><input type="checkbox" name="remember_me" id="remember_me">Recordarme</label>
+                    <a class="button submit red right">Entrar</a>
+                    <a href="#" class="forgotten_pass right">&iquest;Olvidaste tu contrase&ntilde;a?</a>
+                </form>
+            </div>
+        </div>
+        <div class="box">
+            <h3>Facebook</h3>
+            <div class="box-content">
+                <p class="centered_content"><a href="login/ingresarFacebook" class="button facebook wider">Ingresar con Facebook</a></p>
+            </div>
+        </div>
+    </div>
+</div>

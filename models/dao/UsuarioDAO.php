@@ -1,17 +1,13 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* 
+ * Proyecto : SinAuto
+ * Autor    : IngenieriaWeb Ltda.
+ * Fecha    : Jueves, 07 de agosto de 2014
  */
 
-/**
- * Description of UsuarioDAO
- *
- * @author CarlosTapia
- */
-class UsuarioDAO extends Model{
+class UsuarioDAO extends Model
+{
     
     private static $instance=null;
 
@@ -30,14 +26,14 @@ class UsuarioDAO extends Model{
     
     public function getUsuarioPorId($id){
         
-        $vdb= $this->_db->consulta('SELECT * FROM usuario WHERE id ="'.$id.'"');
+        $vdb= $this->_db->consulta('SELECT * FROM usuarios WHERE id ="'.$id.'"');
         
         if($this->_db->numRows($vdb)>0)
         {
             $user_array = $this->_db->fetchAll($vdb);
             $user_obj = new Usuario();
             foreach ($user_array as $usdb) {
-                $user_obj.setId_usuario($usdb['id_user']);
+                $user_obj.setIdUsuario($usdb['id_user']);
                 $user_obj.setNombre($usdb['nombre']);
                 $user_obj.setEmail($usdb['email']);
                 $user_obj.setFacebook($usdb['fb']);
@@ -56,4 +52,58 @@ class UsuarioDAO extends Model{
         }
         
     }
+    
+    
+    public function getUsuarioLogin($email){
+        
+        $sql = 'SELECT * FROM usuarios WHERE email = "' . $email . '" ';
+        
+        $vdb= $this->_db->consulta($sql);
+        
+        if($this->_db->numRows($vdb)>0)
+        {
+            $user_array = $this->_db->fetchAll($vdb);
+            $user_obj = new Usuario();
+            foreach ($user_array as $usdb) {
+                $user_obj->setId_usuario($usdb['id_user']);
+                $user_obj->setNombre($usdb['nombre']);
+                $user_obj->setEmail($usdb['email']);
+                $user_obj->setFacebook($usdb['fb']);
+                $user_obj->setTwitter($usdb['tw']);
+                $user_obj->setRut($usdb['rut']);
+                $user_obj->setPass($usdb['pass']);
+                //$user_obj->setComuna(ComunaDAO::getInstance()->getComunaPorId($usdb['id_com']));             
+                $user_obj->setEstado($usdb['estado']);
+            }
+            
+            return $user_obj;
+        }
+        else
+        {
+            return 0;
+        }
+        
+    }
+    
+    
+    public function verificarEmail($email) {
+        $sql = 'SELECT * FROM usuarios WHERE email = "' . $email . '" ';
+        //echo $sql;
+        $datos = $this->_db->consulta($sql);
+        if ($this->_db->numRows($datos) > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
+    public function registrarUsuario($nombre, $email, $pass) {
+        $sql = 'INSERT INTO usuarios (nombre, email, pass, estado) VALUES '
+            . '("' . $nombre . '", "' . $email . '", "' . $pass . '", 1) ';
+        
+        $datos = $this->_db->consulta($sql);
+        
+        return $datos;
+    }
+
 }

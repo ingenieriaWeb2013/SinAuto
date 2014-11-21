@@ -26,116 +26,71 @@ class loginController extends Controller{
     
     public function ingresar()
     {
-        $LC_user= strtolower($this->getTexto('txtUser'));
-        $LC_pass= strtolower($this->getTexto('txtPass'));        
+        $this->bloquearAtaque();
         
-        if(!empty($LC_user) && !empty($LC_pass))
+        if(Session::get('sess_autenticado'))
+        {
+            $this->redireccionar();
+        }
+        
+        $LC_email= $this->getTexto('txtEmail');
+        $LC_pass= $this->getTexto('txtPass');
+        
+        if(!empty($LC_email) && !empty($LC_pass))
         {   
-            $objUsuarios= $this->_login->getUsuarios($LC_user);
-            
-            if($objUsuarios!=false)
+            if(Funciones::validarEmail($LC_email))
             {
-                if(strtolower($objUsuarios[0]->getClave())==$LC_user && $objUsuarios[0]->getPassword()==$LC_pass)
+                $usuario = $this->loadModel('Usuario');
+                $objUsuarios= $usuario->getUsuarioLogin($LC_email);
+                
+                if($objUsuarios)
                 {
-                    
-                    ############################################################################
-                    //EJECUTANDO STORED PROCEDURE
-                    $sp_perfilClave= $this->_login->sp_perfilClave($LC_user, 'FILEWEB');
-                    if($sp_perfilClave!=false)
+                    if($objUsuarios->getEmail()==$LC_email && $objUsuarios->getPass()==$this->_criptPass($LC_pass))
                     {
-                        if(trim($sp_perfilClave[0]['acceso']) != 'S')
+                        if($objUsuarios->getEstado()==1)
                         {
-                            $this->_alert(2, 'Error al verificar usuario <b>ACCESO</b>.');
-                            $this->redireccionar(); //nopermited1
+                            Session::set('sess_autenticado', true);
+                            Session::set('sess_tiempo', time());
+
+                            Session::set('sess_idUser', $objUsuarios->getId_usuario());
+                            Session::set('sess_nombreUser', $objUsuarios->getNombre());
+                            Session::set('sess_emailUser', $objUsuarios->getEmail());
+                            //Session::set('sess_fonoUser', $row[0]['fono']);
+                            Session::set('sess_idComunaUser', $objUsuarios->getComuna());
+                            //Session::set('sess_fotoPerfilUser', $row[0]['rc_foto']);
+
+                            
+                            
+                            $this->redireccionar('usuarios/config');
+                        }
+                        else
+                        {
+                            $this->_alert(2, 'Su cuenta ha sido bloqueada. Lo sentimos');
+                            $this->redireccionar('registrar');
                         }
                     }
                     else
                     {
-                        $this->_alert(2, 'Error al verificar usuario <b>FILEWEB</b>.');
-                        $this->redireccionar(); //nopermited2
+                        $this->_alert(2, 'Email o Password son incorrectos, por favor vuelva a intentarlo.');
+                        $this->redireccionar('registrar');
                     }
-                    ############################################################################
-                    
-                    
-                    
-                    if($objUsuarios[0]->getCambioPass()=='1')
-                    {
-                        Session::set('sess_User', $LC_user);
-                        Session::set('sess_nombreUser', $objUsuarios[0]->getNombre());
-                        
-                        
-                        $this->redireccionar('login/cambioPass/' . session_id());
-                    }
-                    
-                    //echo '..::fin::..'; exit;
-                    
-
-                    Session::set('Autenticado', true);
-                    Session::set('sess_key_', md5(uniqid()));
-                    Session::set('sess_ip', $_SERVER["REMOTE_ADDR"]);
-                    Session::set('sess_fechaLogin', date("d/m/Y H:i:s"));
-                    Session::set('sess_fechaDefault', Functions::fechaActual(1));
-                    
-                    
-                    Session::set('sess_clave_usuario', $objUsuarios[0]->getClave());
-                    Session::set('sess_nombre', $objUsuarios[0]->getNombre());
-                    Session::set('sess_cod_ven', $objUsuarios[0]->getCodigo());
-                    
-                    Session::set('sess_dctod', $objUsuarios[0]->getDoctoD());
-                    Session::set('sess_dctoh', $objUsuarios[0]->getDoctoH());
-
-                    Session::set('sess_agencia', $objUsuarios[0]->getAgencia());
-                    Session::set('sess_id_agen', $objUsuarios[0]->getIdAgen());
-                    
-                    Session::set('sess_markup', $objUsuarios[0]->getMarkup());
-                    Session::set('sess_fecpass', $objUsuarios[0]->getFechaPass());
-                    
-                    Session::set('sess_depto', $objUsuarios[0]->getDepto());
-                    Session::set('sess_atipoa', $objUsuarios[0]->getAtipoa());
-                    
-                    Session::set('sess_firma', $objUsuarios[0]->getFirma());
-                    Session::set('sess_email', $objUsuarios[0]->getEmail());
-                    Session::set('sess_email_opera', $objUsuarios[0]->getEmailOpera());
-                    
-                    
-
-                    Session::set('level', 'Admin');//Validar tipo de usuario
-                    Session::set('tiempo', time());
-                        
-                    
-                    
-                    ############################################################################
-                    //EJECUTANDO STORED PROCEDURE
-                    $sp_perfilClave= $this->_login->sp_perfilClave($LC_user, 'ADMWEB');
-                    if($sp_perfilClave!=false)
-                    {
-                        Session::set('sess_sp_acceso', trim($sp_perfilClave[0]['acceso']));
-                    }
-                    else
-                    {
-                        Session::set('sess_sp_acceso', 0);
-                    }
-                    ############################################################################
-                    
-                    $this->redireccionar('system');
                 }
                 else
                 {
-                    $this->_alert(2, '<b>Usuario</b> o <b>Contrase&ntilde;a</b> Incorrectos.');
-                    $this->redireccionar(); //Error Usuario o Pass
+                    $this->_alert(2, 'Email ingresado no existe, &iexcl;<a href="' . BASE_URL . '\'registro\'">&uacute;nete ahora</a>!');
+                    $this->redireccionar('registrar');
                 }
             }
             else
             {
-                $this->_alert(2, 'El usuario <b>no &eacute;xiste</b> o No tiene <b>agencia asignada</b>.');
-                $this->redireccionar(); //No existe
+                $this->_alert(2, 'Email ingresado no es v&aacute;lido.');
+                $this->redireccionar('registrar');
             }
         }
         else
         {
-            $this->_alert(2, 'Debe ingresar su <b>Usuario</b> y <b>Contrase&ntilde;a</b>.');
-            
-            $this->redireccionar(); //Ingrese un usuario o Pass
+            $this->_alert(2, 'Para entrar a su cuenta, debe ingresar un Email y Password.');
+            $this->redireccionar('registrar');
         }
     }
 

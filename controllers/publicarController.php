@@ -10,8 +10,8 @@ class publicarController extends Controller
 {
     //private $_marca;
     
-    public function publicarController() {
-        parent::Controller();
+    public function __construct() {
+        parent::__construct();
     }
     
     public function index()
@@ -40,7 +40,7 @@ class publicarController extends Controller
     public function subirImagen(){
         if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
             
-            $dir =  ROOT."public".DS."foto".DS;
+            $dir =  ROOT . "public" . DS . "foto" . DS;
             
             if($_FILES['imagen']['type']!='image/jpeg'){
                 echo json_encode(array(
@@ -59,7 +59,7 @@ class publicarController extends Controller
             
             $nombre = uniqid();
 
-            $ruta = $dir.$nombre .".jpg";
+            $ruta = $dir . $nombre . ".jpg";
 
             if ($file && move_uploaded_file($_FILES['imagen']['tmp_name'],$ruta)){
                 sleep(0);

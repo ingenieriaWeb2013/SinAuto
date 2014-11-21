@@ -21,9 +21,20 @@ class Usuario {
     private $rut;
     private $pass;
     private $comuna;
+    private $_estado;
     
-    public function Usuario(){}
-    
+    public function getEstado() {
+        return $this->_estado;
+    }
+    public function setEstado($st) {
+        $this->_estado=$st;
+    }
+
+
+
+
+
+
     public function getNombre() {
         return $this->nombre;
     }
