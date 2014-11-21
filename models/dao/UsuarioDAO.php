@@ -11,9 +11,9 @@ class UsuarioDAO extends Model
     
     private static $instance=null;
 
-    /*private function UsuarioDAO(){ 
+    public function UsuarioDAO(){ 
         parent::Model();
-    }*/
+    }
     
     public static function getInstance(){//Singleton pattern
         if (UsuarioDAO::$instance==null) {
@@ -33,7 +33,7 @@ class UsuarioDAO extends Model
             $user_array = $this->_db->fetchAll($vdb);
             $user_obj = new Usuario();
             foreach ($user_array as $usdb) {
-                $user_obj.setId_usuario($usdb['id_user']);
+                $user_obj.setIdUsuario($usdb['id_user']);
                 $user_obj.setNombre($usdb['nombre']);
                 $user_obj.setEmail($usdb['email']);
                 $user_obj.setFacebook($usdb['fb']);
